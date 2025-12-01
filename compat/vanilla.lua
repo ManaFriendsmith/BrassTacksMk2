@@ -34,6 +34,10 @@ if misc.difficulty > 1 then
     else
         tm.AddUnlock("electric-engine", "complex-joint")
     end
+
+    if data.raw.item["skyseeker-armature"] then
+        tm.AddUnlock("electric-engine", "skyseeker-armature")
+    end
 end
 
 if misc.difficulty > 1 then
@@ -42,7 +46,7 @@ if misc.difficulty > 1 then
     end
     rm.RemoveIngredient("flying-robot-frame", "electronic-circuit", 99999)
 
-    if data.raw.item["rocket-control-unit"] then
+    if mods["space-age"] then
         if rm.GetIngredientCount("rocket-control-unit", "gyro") == 0 then
             rm.AddIngredient("rocket-control-unit", "gyro", 1)
         end
@@ -119,18 +123,22 @@ end
 
 if misc.difficulty == 3 then
     if not mods["BrimStuff"] then
-        rm.AddIngredient("rocket-fuel", "pipe-flange", 1)
+        if mods["space-age"] or not mods["LunarLandings"] then
+            rm.AddIngredient("rocket-fuel", "pipe-flange", 1)
+        end
         rm.AddIngredient("rocket-fuel-from-jelly", "pipe-flange", 1)
         rm.AddIngredient("ammonia-rocket-fuel", "pipe-flange", 1)
         rm.AddIngredient("maraxsis-hydrolox-rocket-fuel", "pipe-flange", 1)
     end
 
-    rm.AddIngredient("rocket-fuel", "galvanized-panel", 1)
+    if mods["space-age"] or not mods["LunarLandings"] then
+        rm.AddIngredient("rocket-fuel", "galvanized-panel", 1)
+    end
     rm.AddIngredient("rocket-fuel-from-jelly", "galvanized-panel", 1)
     rm.AddIngredient("ammonia-rocket-fuel", "galvanized-panel", 1)
     rm.AddIngredient("maraxsis-hydrolox-rocket-fuel", "galvanized-panel", 1)
 
-elseif misc.difficulty == 2 and not (mods["space-age"] or mods["BrimStuff"]) then
+elseif misc.difficulty == 2 and not (mods["space-age"] or mods["BrimStuff"] or mods["LunarLandings"]) then
     rm.AddIngredient("rocket-fuel", "pipe-flange", 1)
 end
 
@@ -420,8 +428,13 @@ else
     end
     rm.ReplaceIngredientProportional("oil-refinery", "steel-plate", "hardened-hull")
     rm.ReplaceIngredientProportional("electric-furnace", "steel-plate", "hardened-hull", 0.5)
-    rm.ReplaceIngredientProportional("rocket-silo", "steel-plate", "hardened-hull", 0.5, 200)
-    rm.AddIngredient("rocket-silo", "complex-joint", 100)
+    if mods["space-age"] or not mods["LunarLandings"] then
+        rm.ReplaceIngredientProportional("rocket-silo", "steel-plate", "hardened-hull", 0.5, 200)
+        rm.AddIngredient("rocket-silo", "complex-joint", 100)
+    end
+    if data.raw.item["skyseeker-armature"] and (mods["space-age"] or not (mods["LunarLandings"] and data.raw.item["tracker"])) then
+        rm.ReplaceIngredientProportional("rocket-silo", "electric-engine-unit", "skyseeker-armature")
+    end
     if misc.difficulty == 3 then
         rm.ReplaceIngredientProportional("rocket-silo", "pipe", "galvanized-tubing")
     end
@@ -511,9 +524,16 @@ rm.ReplaceIngredientProportional("laser-turret", "steel-plate", "galvanized-stee
 if misc.difficulty == 3 and mods["space-age"] then
     rm.ReplaceIngredientProportional("artillery-turret", "iron-gear-wheel", "spurving-bearing", 0.25)
     rm.ReplaceIngredientProportional("artillery-wagon", "iron-gear-wheel", "spurving-bearing", 0.25)
-else
+    if data.raw.item["skyseeker-armature"] then
+        rm.AddIngredient("artillery-wagon", "skyseeker-armature", 10)
+        rm.AddIngredient("artillery-turret", "skyseeker-armature", 10)
+    end
+elseif data.raw.item["skyseeker-armature"] then
+    rm.ReplaceIngredientProportional("artillery-turret", "iron-gear-wheel", "skyseeker-armature", 0.25)
+    rm.ReplaceIngredientProportional("artillery-wagon", "iron-gear-wheel", "skyseeker-armature", 1)
+elseif misc.difficulty > 1 then
     rm.ReplaceIngredientProportional("artillery-turret", "iron-gear-wheel", "complex-joint", 0.25)
-    rm.ReplaceIngredientProportional("artillery-wagon", "iron-gear-wheel", "complex-joint", 0.25)
+    rm.ReplaceIngredientProportional("artillery-wagon", "iron-gear-wheel", "complex-joint", 1)
 end
 
 if misc.difficulty < 3 then

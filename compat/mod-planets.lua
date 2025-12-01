@@ -2,6 +2,53 @@ local rm = require("__pf-functions__/recipe-manipulation")
 local tm = require("__pf-functions__/technology-manipulation")
 local misc = require("__pf-functions__/misc")
 
+if mods["LunarLandings"] then
+    rm.ReplaceIngredientProportional("ll-oxygen-diffuser", "steel-plate", "galvanized-steel-plate")
+
+    local llrcu = mods["space-age"] and "ll-rocket-control-unit" or "rocket-control-unit"
+    local llrs = mods["space-age"] and "ll-rocket-silo-up" or "rocket-silo"
+    if misc.difficulty > 1 then
+        rm.AddIngredient(llrcu, "gyro", 1)
+        rm.RemoveIngredient(llrcu, "electronic-circuit", 99999)
+
+        rm.ReplaceIngredientProportional(llrs, "steel-plate", "hardened-hull", 0.5, 100)
+        rm.AddIngredient(llrs, "complex-joint", 50)
+        rm.ReplaceIngredientProportional(llrs, "pipe", "galvanized-tubing")
+    end
+
+    --maybe this is a little mean. but it does push the player toward cheese processing
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("ll-lunar-foundation", "steel-plate", "hardened-hull", 0.75)
+        rm.ReplaceIngredientProportional("ll-low-grav-assembling-machine", "iron-gear-wheel", "complex-joint")
+        rm.ReplaceIngredientProportional("ll-telescope", "iron-gear-wheel", "skyseeker-armature")
+        rm.AddIngredient("ll-data-card", {type="item", name="skyseeker-armature", amount=1, ignored_by_stats=1})
+        rm.AddProduct("ll-data-card", {type="item", name="skyseeker-armature", amount=1, ignored_by_stats=1, ignored_by_productivity=1, probability=0.95})
+
+        rm.AddIngredient("ll-core-extractor", "bearing", 20)
+        rm.ReplaceIngredientProportional("ll-rocket-silo-interstellar", "pipe", "galvanized-tubing")
+
+        rm.MultiplyRecipe("ll-mass-driver-capsule", 10)
+        rm.AddIngredient("ll-mass-driver-capsule", "skyseeker-armature", 1)
+        rm.AddIngredient("ll-mass-driver", "skyseeker-armature", 20)
+    else
+        rm.ReplaceIngredientProportional("ll-lunar-foundation", "steel-plate", "galvanized-steel-plate")
+        if misc.difficulty == 2 then
+            rm.ReplaceIngredientProportional("ll-telescope", "iron-gear-wheel", "complex-joint")
+        end
+    end
+
+    if misc.difficulty > 1 then
+        rm.ReplaceIngredientProportional("ll-arc-furnace", "steel-plate", "hardened-hull")
+        rm.ReplaceIngredientProportional("ll-rocket-silo-interstellar", "steel-plate", "hardened-hull", 1, 200)
+
+        if not data.raw.item["grabber"] then
+            rm.AddIngredient("ll-ion-logistic-robot", "complex-joint", 2)
+            rm.AddIngredient("ll-ion-construction-robot", "complex-joint", 2)
+        end
+        rm.ReplaceIngredientProportional("ll-ion-roboport", "steel-plate", "galvanized-steel-plate")
+    end
+end
+
 --mods that just use vanilla-like ore generation will not get special design effort
 if mods["tenebris"] then
     data.raw.planet["tenebris"].map_gen_settings.autoplace_controls["zinc-ore"] = {}
@@ -25,6 +72,12 @@ if mods["maraxsis"] then
     rm.ReplaceIngredientProportional("maraxsis-pressure-dome", "pipe", "pump", 0.2)
     if misc.difficulty > 1 and not mods["BrimStuff"] then
         rm.AddIngredient("maraxsis-wyrm-confinement-cell", "pipe-flange", 1)
+    end
+
+    rm.AddRecipeCategory("pipe-flange", "maraxsis-hydro-plant")
+
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("maraxsis-oversized-steam-turbine", "tungsten-plate", "spurving-bearing", 0.5, 40)
     end
 end
 
@@ -84,6 +137,7 @@ if mods["Paracelsin"] then
     rm.AddRecipeCategory("pipe-flange", "mechanics")
     rm.AddRecipeCategory("express-gearbox", "mechanics")
     rm.AddRecipeCategory("loadbearing-lattice", "mechanics")
+    rm.AddRecipeCategory("skyseeker-armature", "mechanics")
 
     table.insert(data.raw["simple-entity"]["crashed-fulgoran-pod"].minable.results, {type="item", name="brass-plate", amount_min=2, amount_max=15})
     table.insert(data.raw["simple-entity"]["crashed-fulgoran-pod"].minable.results, {type="item", name="bearing", amount_min=1, amount_max=6}) -- needed to craft turbines

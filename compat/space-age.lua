@@ -181,7 +181,7 @@ if (misc.difficulty == 3) and mods["LasingAround"] then
     rm.ReplaceIngredientProportional("cardinal-grammeter", "iron-gear-wheel", "complex-joint", mods["BrimStuff"] and 0.1 or 0.2)
 
     rm.AddIngredient("perpendicular-processor", "malleable-logarithmic-casing", 2)
-    rm.ReplaceIngredientProportional("random-number-nullifier", "iron-gear-wheel", "gyro", 0.25)
+    rm.ReplaceIngredientProportional("random-number-nullifier", "advanced-circuit", "gyro", 1)
 end
 
 if misc.difficulty == 3 then
@@ -207,21 +207,7 @@ if misc.starting_planet == "fulgora" then
         tm.AddUnlock("electroplating", "offshore-pump")
 
         if not mods["BrimStuff"] then
-            --no burner chemical plant and we need galvanized pipes to make an electric one - desperate measures!
-            --it's bad form to define a new bespoke prototype in data-updates. Do as I say not as I do.
-            data:extend({
-                {
-                    type="recipe-category",
-                    name="cryogenics-or-chemistry-or-electroplating",
-                    can_recycle=false
-                }
-            })
-
-            table.insert(data.raw["assembling-machine"]["electroplating-machine"].crafting_categories, "cryogenics-or-chemistry-or-electroplating")
-            table.insert(data.raw["assembling-machine"]["advanced-electroplating-machine"].crafting_categories, "cryogenics-or-chemistry-or-electroplating")
-            table.insert(data.raw["assembling-machine"]["chemical-plant"].crafting_categories, "cryogenics-or-chemistry-or-electroplating")
-            table.insert(data.raw["assembling-machine"]["cryogenic-plant"].crafting_categories, "cryogenics-or-chemistry-or-electroplating")
-            data.raw.recipe["ice-melting"].category = "cryogenics-or-chemistry-or-electroplating"
+            rm.AddRecipeCategory("ice-melting", "electroplating")
         end
     end
 
@@ -243,10 +229,6 @@ if misc.difficulty > 1 then
 end
 
 if misc.difficulty == 3 then
-    if (rm.GetIngredientCount("cryogenic-plant", "differential-girdlespring") == 0) and (rm.GetIngredientCount("cryogenic-plant", "non-reversible-tremie-pipe") == 0) then
-        rm.AddIngredient("cryogenic-plant", "spurving-bearing", 4)
-    end
-
     if not mods["ThemTharHills"] then
         rm.AddIngredient("railgun-turret", "spurving-bearing", 5)
     end

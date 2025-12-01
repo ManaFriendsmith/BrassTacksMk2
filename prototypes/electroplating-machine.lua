@@ -198,7 +198,8 @@ local electroplater = {
         },
         secondary_draw_orders = {north = -1, west = -1, east = -1}
       }
-    }
+    },
+    ll_surface_conditions = {nauvis=true, luna={plain=false, lowland=false, mountain=false, foundation=true}}
 }
 
 local electroplater2 = table.deepcopy(electroplater)

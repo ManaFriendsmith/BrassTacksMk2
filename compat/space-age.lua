@@ -126,7 +126,7 @@ else
     rm.ReplaceIngredientProportional("agricultural-tower", "steel-plate", "galvanized-steel-plate")
 end
 
-if mods["IfNickel"] then
+if mods["IfNickelMk2"] then
     table.insert(data.raw["simple-entity"]["copper-stromatolite"].minable.results, {type="item", name="zinc-ore", amount_min=8, amount_max=16})
 else
     table.insert(data.raw["simple-entity"]["copper-stromatolite"].minable.results, {type="item", name="zinc-ore", amount_min=4, amount_max=8})
@@ -171,14 +171,14 @@ if misc.difficulty > 1 then
     if not data.raw.item["tracker"] then
         rm.AddIngredient("tesla-turret", "gyro", 10)
     end
-    if mods["LasingAround"] then
+    if mods["LasingAroundMk2"] then
         rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="fast-gearbox", amount=1, probability=0.2})
         rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="linkages", amount=1, probability=0.2})
     end
 end
 
-if (misc.difficulty == 3) and mods["LasingAround"] then
-    rm.ReplaceIngredientProportional("cardinal-grammeter", "iron-gear-wheel", "complex-joint", mods["BrimStuff"] and 0.1 or 0.2)
+if (misc.difficulty == 3) and mods["LasingAroundMk2"] then
+    rm.ReplaceIngredientProportional("cardinal-grammeter", "iron-gear-wheel", "complex-joint", mods["BrimStuffMk2"] and 0.1 or 0.2)
 
     rm.AddIngredient("perpendicular-processor", "malleable-logarithmic-casing", 2)
     rm.ReplaceIngredientProportional("random-number-nullifier", "advanced-circuit", "gyro", 1)
@@ -190,7 +190,7 @@ if misc.difficulty == 3 then
 
     rm.AddProduct("ice-melting", "water", 5)
 else
-    if mods["LasingAround"] then
+    if mods["LasingAroundMk2"] then
         rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.3})
     else
         rm.AddProduct("scrap-recycling", {type="item", name="bearing", amount=1, probability=0.03})
@@ -206,7 +206,7 @@ if misc.starting_planet == "fulgora" then
         tm.AddUnlock("electroplating", "pipe-to-ground")
         tm.AddUnlock("electroplating", "offshore-pump")
 
-        if not mods["BrimStuff"] then
+        if not mods["BrimStuffMk2"] then
             rm.AddRecipeCategory("ice-melting", "electroplating")
         end
     end
@@ -229,7 +229,7 @@ if misc.difficulty > 1 then
 end
 
 if misc.difficulty == 3 then
-    if not mods["ThemTharHills"] then
+    if not mods["ThemTharHillsMk2"] then
         rm.AddIngredient("railgun-turret", "spurving-bearing", 5)
     end
 end

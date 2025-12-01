@@ -7,7 +7,7 @@ end
 local electroplater_pipes = assembler2pipepictures()
 electroplater_pipes.south =
 {
-  filename = "__BrassTacks__/graphics/entity/pipe_connector.png",
+  filename = "__BrassTacksMk2__/graphics/entity/pipe_connector.png",
   priority = "extra-high",
   width = 88,
   height = 61,
@@ -18,7 +18,7 @@ electroplater_pipes.south =
 local electroplater = {
     type = "assembling-machine",
     name = "electroplating-machine",
-    icon = "__BrassTacks__/graphics/icons/electroplating-machine.png",
+    icon = "__BrassTacksMk2__/graphics/icons/electroplating-machine.png",
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.1, result = "electroplating-machine"},
     fast_replaceable_group = "electroplating-machine",
@@ -45,7 +45,7 @@ local electroplater = {
       animation = {
         layers = {
           {
-            filename = "__BrassTacks__/graphics/entity/electroplating-machine.png",
+            filename = "__BrassTacksMk2__/graphics/entity/electroplating-machine.png",
             width = 192,
             height = 192,
             frame_count = 1,
@@ -54,7 +54,7 @@ local electroplater = {
             scale = 0.5    
           },
           {
-            filename = "__BrassTacks__/graphics/entity/electroplating-machine-shadow.png",
+            filename = "__BrassTacksMk2__/graphics/entity/electroplating-machine-shadow.png",
             draw_as_shadow = true,
             width = 384,
             height = 192,
@@ -69,7 +69,7 @@ local electroplater = {
       working_visualisations = {
           {
             animation = {
-              filename = "__BrassTacks__/graphics/entity/electroplating-machine-light.png",
+              filename = "__BrassTacksMk2__/graphics/entity/electroplating-machine-light.png",
               width = 192,
               height = 192,
               draw_as_glow = true,
@@ -90,7 +90,7 @@ local electroplater = {
           }
         },
       frozen_patch = mods["space-age"] and {
-        filename = "__BrassTacks__/graphics/entity/electroplating-machine-frozen.png",
+        filename = "__BrassTacksMk2__/graphics/entity/electroplating-machine-frozen.png",
         width = 192,
         height = 192,
         scale = 0.5
@@ -206,9 +206,9 @@ local electroplater2 = table.deepcopy(electroplater)
 
 electroplater2.name = "advanced-electroplating-machine"
 electroplater2.minable.result = "advanced-electroplating-machine"
-electroplater2.icon = "__BrassTacks__/graphics/icons/advanced-electroplating-machine.png"
+electroplater2.icon = "__BrassTacksMk2__/graphics/icons/advanced-electroplating-machine.png"
 electroplater2.corpse = "advanced-electroplating-machine-remnants"
-electroplater2.graphics_set.animation.layers[1].filename = "__BrassTacks__/graphics/entity/advanced-electroplating-machine.png"
+electroplater2.graphics_set.animation.layers[1].filename = "__BrassTacksMk2__/graphics/entity/advanced-electroplating-machine.png"
 electroplater2.energy_usage = "300kW"
 electroplater2.crafting_speed = 2
 electroplater2.module_slots = 4
@@ -221,7 +221,7 @@ end
 local e_corpse = {
     type = "corpse",
     name = "electroplating-machine-remnants",
-    icon = "__BrassTacks__/graphics/icons/electroplating-machine.png",
+    icon = "__BrassTacksMk2__/graphics/icons/electroplating-machine.png",
     icon_size = 64,
     flags = {"placeable-neutral", "not-on-map"},
     subgroup = "production-machine-remnants",
@@ -233,7 +233,7 @@ local e_corpse = {
     selectable_in_game = false,
     animation = {
         direction_count = 1,
-        filename = "__BrassTacks__/graphics/entity/electroplating-machine-corpse.png",
+        filename = "__BrassTacksMk2__/graphics/entity/electroplating-machine-corpse.png",
         priority = "high",
         width = 192,
         height = 192,
@@ -246,7 +246,7 @@ local e_corpse = {
 local e_corpse_2 = table.deepcopy(e_corpse)
 
 e_corpse_2.name = "advanced-electroplating-machine-remnants"
-e_corpse_2.animation.filename = "__BrassTacks__/graphics/entity/advanced-electroplating-machine-corpse.png"
-e_corpse_2.icon = "__BrassTacks__/graphics/icons/advanced-electroplating-machine.png",
+e_corpse_2.animation.filename = "__BrassTacksMk2__/graphics/entity/advanced-electroplating-machine-corpse.png"
+e_corpse_2.icon = "__BrassTacksMk2__/graphics/icons/advanced-electroplating-machine.png",
 
 data:extend({electroplater, electroplater2, e_corpse, e_corpse_2})

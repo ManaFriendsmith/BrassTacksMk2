@@ -11,7 +11,7 @@ data:extend({
   {
     type = "resource",
     name = "zinc-ore",
-    icon = "__BrassTacks__/graphics/icons/zinc-ore.png",
+    icon = "__BrassTacksMk2__/graphics/icons/zinc-ore.png",
     icon_size = 64,
     icon_mipmaps = 4,
     flags = {"placeable-neutral"},
@@ -42,7 +42,7 @@ data:extend({
     {
       sheet =
       {
-        filename = "__BrassTacks__/graphics/entity/zinc-ore.png",
+        filename = "__BrassTacksMk2__/graphics/entity/zinc-ore.png",
         priority = "extra-high",
         size = 128,
         frame_count = 8,
@@ -72,7 +72,7 @@ if mods["LunarLandings"] then
     {
       type = "resource",
       name = "cheese-ore",
-      icon = "__BrassTacks__/graphics/icons/cheese-ore.png",
+      icon = "__BrassTacksMk2__/graphics/icons/cheese-ore.png",
       icon_size = 64,
       icon_mipmaps = 4,
       flags = {"placeable-neutral"},
@@ -103,7 +103,7 @@ if mods["LunarLandings"] then
       {
         sheet =
         {
-          filename = "__BrassTacks__/graphics/entity/cheese-ore.png",
+          filename = "__BrassTacksMk2__/graphics/entity/cheese-ore.png",
           priority = "extra-high",
           size = 128,
           frame_count = 8,
@@ -144,7 +144,7 @@ if mods["castra"] then
     {
       type = "resource",
       name = "ancient-military-wreckage",
-      icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+      icon = "__BrassTacksMk2__/graphics/icons/ancient-military-wreckage.png",
       icon_size = 64,
       icon_mipmaps = 4,
       flags = {"placeable-neutral"},
@@ -175,7 +175,7 @@ if mods["castra"] then
       {
         sheet =
         {
-          filename = "__BrassTacks__/graphics/entity/ancient-military-wreckage.png",
+          filename = "__BrassTacksMk2__/graphics/entity/ancient-military-wreckage.png",
           priority = "extra-high",
           size = 94,
           frame_count = 4,

@@ -3,11 +3,11 @@ local tm = require("__pf-functions__/technology-manipulation")
 local misc = require("__pf-functions__/misc")
 
 if misc.difficulty > 1 then
-    rm.ReplaceIngredientProportional("aop-greenhouse", "iron-gear-wheel", "fast-gearbox", 0.2, (mods["IfNickel" or mods["BrimStuff"]]) and 25 or 50)
-    rm.ReplaceIngredientProportional("aop-smeltery", "iron-gear-wheel", "complex-joint", 0.33, (mods["IfNickel" or mods["BrimStuff"]]) and 75 or 150)
+    rm.ReplaceIngredientProportional("aop-greenhouse", "iron-gear-wheel", "fast-gearbox", 0.2, (mods["IfNickelMk2" or mods["BrimStuffMk2"]]) and 25 or 50)
+    rm.ReplaceIngredientProportional("aop-smeltery", "iron-gear-wheel", "complex-joint", 0.33, (mods["IfNickelMk2" or mods["BrimStuffMk2"]]) and 75 or 150)
 end
 
-if not mods["IfNickel"] then
+if not mods["IfNickelMk2"] then
     rm.AddIngredient("aop-lumber-mill", "electric-engine-unit", 5)
 end
 

@@ -7,14 +7,14 @@ data:extend({
     {
         type = "item",
         name = "zinc-ore",
-        icon = "__BrassTacks__/graphics/icons/zinc-ore.png",
+        icon = "__BrassTacksMk2__/graphics/icons/zinc-ore.png",
         icon_size = 64,
         mipmap_count = 4,
         pictures = {
-          { size = 64, filename = "__BrassTacks__/graphics/icons/zinc-ore.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__BrassTacks__/graphics/icons/zinc-ore-1.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__BrassTacks__/graphics/icons/zinc-ore-2.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__BrassTacks__/graphics/icons/zinc-ore-3.png", scale = 0.5, mipmap_count = 4 }
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/zinc-ore.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/zinc-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/zinc-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/zinc-ore-3.png", scale = 0.5, mipmap_count = 4 }
         },
         subgroup = "raw-resource",
         order = "fa", -- f = copper
@@ -30,7 +30,7 @@ data:extend({
       {
         type = "item",
         name = "zinc-plate",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/zinc-plate.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/zinc-plate.png"),
         subgroup = "raw-material",
         order = "a[smelting]-ba",
         color_hint = { text = "Z" },
@@ -45,7 +45,7 @@ data:extend({
       {
         type = "item",
         name = "brass-precursor",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-precursor.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-precursor.png"),
         subgroup = "raw-resource",
         order = "fab",
         color_hint = { text = "B" },
@@ -61,7 +61,7 @@ data:extend({
       {
         type = "item",
         name = "brass-plate",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-plate.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-plate.png"),
         subgroup = "raw-material",
         order = "a[smelting]-bb",
         color_hint = { text = "B" },
@@ -76,7 +76,7 @@ data:extend({
       {
         type = "item",
         name = "galvanized-steel-plate",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/galvanized-steel-plate.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
         subgroup = "raw-material",
         order = "a[smelting]-ca",
         color_hint = { text = "G" },
@@ -91,7 +91,7 @@ data:extend({
       {
         type = "item",
         name = "brass-balls",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-balls.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-balls.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1",
         color_hint = { text = "G" },
@@ -105,7 +105,7 @@ data:extend({
       {
         type = "item",
         name = "bearing",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/bearing.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/bearing.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1a",
         color_hint = { text = "G" },
@@ -123,14 +123,14 @@ if mods["LunarLandings"] then
     {
         type = "item",
         name = "cheese-ore",
-        icon = "__BrassTacks__/graphics/icons/cheese-ore.png",
+        icon = "__BrassTacksMk2__/graphics/icons/cheese-ore.png",
         icon_size = 64,
         mipmap_count = 4,
         pictures = {
-          { size = 64, filename = "__BrassTacks__/graphics/icons/cheese-ore.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__BrassTacks__/graphics/icons/cheese-ore-1.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__BrassTacks__/graphics/icons/cheese-ore-2.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__BrassTacks__/graphics/icons/cheese-ore-3.png", scale = 0.5, mipmap_count = 4 }
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/cheese-ore.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/cheese-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/cheese-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__BrassTacksMk2__/graphics/icons/cheese-ore-3.png", scale = 0.5, mipmap_count = 4 }
         },
         subgroup = "raw-resource",
         order = "faq", -- f = copper
@@ -168,14 +168,14 @@ if mods["space-age"] then
         {
             type = "item",
             name = "sphalerite",
-            icon = "__BrassTacks__/graphics/icons/sphalerite.png",
+            icon = "__BrassTacksMk2__/graphics/icons/sphalerite.png",
             icon_size = 64,
             mipmap_count = 4,
             pictures = {
-              { size = 64, filename = "__BrassTacks__/graphics/icons/sphalerite.png", scale = 0.5, mipmap_count = 4 },
-              { size = 64, filename = "__BrassTacks__/graphics/icons/sphalerite-1.png", scale = 0.5, mipmap_count = 4 },
-              { size = 64, filename = "__BrassTacks__/graphics/icons/sphalerite-2.png", scale = 0.5, mipmap_count = 4 },
-              { size = 64, filename = "__BrassTacks__/graphics/icons/sphalerite-3.png", scale = 0.5, mipmap_count = 4 }
+              { size = 64, filename = "__BrassTacksMk2__/graphics/icons/sphalerite.png", scale = 0.5, mipmap_count = 4 },
+              { size = 64, filename = "__BrassTacksMk2__/graphics/icons/sphalerite-1.png", scale = 0.5, mipmap_count = 4 },
+              { size = 64, filename = "__BrassTacksMk2__/graphics/icons/sphalerite-2.png", scale = 0.5, mipmap_count = 4 },
+              { size = 64, filename = "__BrassTacksMk2__/graphics/icons/sphalerite-3.png", scale = 0.5, mipmap_count = 4 }
             },
             subgroup = "raw-resource",
             order = "faa",
@@ -235,7 +235,7 @@ if mods["space-age"] then
         {
             type = "item",
             name = "ancient-military-wreckage",
-            icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+            icon = "__BrassTacksMk2__/graphics/icons/ancient-military-wreckage.png",
             icon_size = 64,
             subgroup = "castra-processes",
             order = "a",
@@ -260,7 +260,7 @@ data:extend({
     {
         type = "item",
         name = "pipe-flange",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/pipe-flange.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/pipe-flange.png"),
         subgroup = "intermediate-product",
         order = "a[basic-intermediates]-da",
         inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -273,7 +273,7 @@ data:extend({
     {
         type = "item",
         name = "flywheel",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/flywheel.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/flywheel.png"),
         subgroup = "intermediate-product",
         order = "a[basic-intermediates]-aa",
         inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -286,7 +286,7 @@ data:extend({
     {
         type = "item",
         name = "linkages",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/linkages.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/linkages.png"),
         subgroup = "intermediate-product",
         order = "a[basic-intermediates]-ba",
         inventory_move_sound = item_sounds.mechanical_inventory_move,
@@ -299,7 +299,7 @@ data:extend({
     {
         type = "item",
         name = "hardened-hull",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/hardened-hull.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/hardened-hull.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1ba",
         inventory_move_sound = item_sounds.metal_large_inventory_move,
@@ -312,7 +312,7 @@ data:extend({
     {
         type = "item",
         name = "fast-gearbox",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/fast-gearbox.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/fast-gearbox.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1c",
         inventory_move_sound = item_sounds.metal_large_inventory_move,
@@ -325,7 +325,7 @@ data:extend({
     {
         type = "item",
         name = "express-gearbox",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/express-gearbox.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/express-gearbox.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1d",
         inventory_move_sound = item_sounds.metal_large_inventory_move,
@@ -338,7 +338,7 @@ data:extend({
     {
         type = "item",
         name = "complex-joint",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/complex-joint.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/complex-joint.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1e",
         inventory_move_sound = item_sounds.mechanical_inventory_move,
@@ -351,7 +351,7 @@ data:extend({
     {
         type = "item",
         name = "gyro",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/gyro.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/gyro.png"),
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-1d",
         inventory_move_sound = item_sounds.rocket_control_inventory_move,
@@ -382,7 +382,7 @@ data:extend({
   {
     type = "fluid",
     name = "depleted-zinc-salts",
-    icon = "__BrassTacks__/graphics/vector/icons/depleted-zinc-salts.png",
+    icon = "__BrassTacksMk2__/graphics/vector/icons/depleted-zinc-salts.png",
     icon_size = 64,
     mipmap_count = 4,
     subgroup = "fluid",
@@ -395,7 +395,7 @@ data:extend({
   {
       type = "item",
       name = "electroplating-machine",
-      icon = "__BrassTacks__/graphics/icons/electroplating-machine.png",
+      icon = "__BrassTacksMk2__/graphics/icons/electroplating-machine.png",
       subgroup = mods["space-age"] and "smelting-machine" or "production-machine",
       order = mods["space-age"] and "e" or "ca",
       place_result = "electroplating-machine",
@@ -409,7 +409,7 @@ data:extend({
   {
       type = "item",
       name = "advanced-electroplating-machine",
-      icon = "__BrassTacks__/graphics/icons/advanced-electroplating-machine.png",
+      icon = "__BrassTacksMk2__/graphics/icons/advanced-electroplating-machine.png",
       subgroup = mods["space-age"] and "smelting-machine" or "production-machine",
       order = mods["space-age"] and "f" or "cb",
       place_result = "advanced-electroplating-machine",
@@ -423,7 +423,7 @@ data:extend({
   {
       type = "item",
       name = "galvanized-panel",
-      icon = "__BrassTacks__/graphics/vector/icons/galvanized-panel.png",
+      icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
       subgroup = "electroplating",
       order = "a",
       inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -437,7 +437,7 @@ data:extend({
   {
       type = "item",
       name = "galvanized-rod",
-      icon = "__BrassTacks__/graphics/vector/icons/galvanized-rod.png",
+      icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
       subgroup = "electroplating",
       order = "b",
       inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -451,7 +451,7 @@ data:extend({
   {
       type = "item",
       name = "galvanized-tubing",
-      icon = "__BrassTacks__/graphics/vector/icons/galvanized-tubing.png",
+      icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
       subgroup = "electroplating",
       order = "c",
       inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -465,7 +465,7 @@ data:extend({
   {
       type = "item",
       name = "malleable-logarithmic-casing",
-      icon = "__BrassTacks__/graphics/vector/icons/malleable-logarithmic-casing.png",
+      icon = "__BrassTacksMk2__/graphics/vector/icons/malleable-logarithmic-casing.png",
       subgroup = "intermediate-product",
       order = "c[advanced-intermediates]-1b",
       inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -478,7 +478,7 @@ data:extend({
   {
       type = "item",
       name = "loadbearing-lattice",
-      icon = "__BrassTacks__/graphics/vector/icons/loadbearing-lattice.png",
+      icon = "__BrassTacksMk2__/graphics/vector/icons/loadbearing-lattice.png",
       subgroup = "intermediate-product",
       order = "c[advanced-intermediates]-1bb",
       inventory_move_sound = item_sounds.metal_large_inventory_move,
@@ -495,7 +495,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "spurving-bearing",
-      icon = "__BrassTacks__/graphics/vector/icons/spurving-bearing.png",
+      icon = "__BrassTacksMk2__/graphics/vector/icons/spurving-bearing.png",
       subgroup = "vulcanus-processes",
       order = "c[tungsten]-d",
       inventory_move_sound = item_sounds.mechanical_inventory_move,
@@ -513,7 +513,7 @@ if mods["LunarLandings"] then
     {
         type = "item",
         name = "skyseeker-armature",
-        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/skyseeker-armature.png"),
+        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/skyseeker-armature.png"),
         icon_size = 64,
         mipmap_count = 4,
         subgroup = "intermediate-product",

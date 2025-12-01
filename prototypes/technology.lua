@@ -6,7 +6,7 @@ if mods["LunarLandings"] then
         {
             type = "technology",
             name = "lunar-cheese-exploitation",
-            icon = "__BrassTacks__/graphics/technology/lunar-cheese-exploitation.png",
+            icon = "__BrassTacksMk2__/graphics/technology/lunar-cheese-exploitation.png",
             icon_size = 64,
             effects = {
                 {
@@ -34,7 +34,7 @@ if misc.difficulty > 1 then
         {
             type = "technology",
             name = "mechanical-engineering",
-            icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "technology/mechanical-engineering.png"),
+            icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "technology/mechanical-engineering.png"),
             icon_size = 256,
             effects = {
                 {
@@ -60,7 +60,7 @@ if misc.difficulty == 3 then
         {
             type = "technology",
             name = "electroplating",
-            icon = "__BrassTacks__/graphics/technology/electroplating.png",
+            icon = "__BrassTacksMk2__/graphics/technology/electroplating.png",
             icon_size = 256,
             effects = {
                 {
@@ -109,7 +109,7 @@ if misc.difficulty == 3 then
         {
             type = "technology",
             name = "advanced-electroplating-machine",
-            icon = "__BrassTacks__/graphics/technology/advanced-electroplating-machine.png",
+            icon = "__BrassTacksMk2__/graphics/technology/advanced-electroplating-machine.png",
             icon_size = 256,
             effects = {
                 {
@@ -139,7 +139,7 @@ elseif misc.difficulty == 2 then
         {
             type = "technology",
             name = "hardened-hull",
-            icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "technology/hardened-hull.png"),
+            icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "technology/hardened-hull.png"),
             icon_size = 256,
             effects = {
                 {

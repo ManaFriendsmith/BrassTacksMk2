@@ -7,7 +7,7 @@ if mods["bzlead"] then
         --add bolts to loadbearing lattices
 
         rm.AddIngredient("loadbearing-lattice", "lead-expansion-bolt", 2)
-        if mods["BrimStuff"] and misc.difficulty < 3 then
+        if mods["BrimStuffMk2"] and misc.difficulty < 3 then
             --not an overloaded recipe by any means, but one you want to be simpler
             rm.RemoveIngredient("big-electric-pole", "lead-expansion-bolt", 99999)
         end
@@ -20,7 +20,7 @@ if mods["bzlead"] then
         --add bolts to hardened hulls
         --if misc.difficulty == 3 then
             --rm.AddIngredient("hardened-hull", "lead-expansion-bolt", 3)
-        --elseif mods["IfNickel"] then
+        --elseif mods["IfNickelMk2"] then
             --invar is a bit expensive
             --rm.AddIngredient("hardened-hull", "lead-expansion-bolt", 1)
         --else
@@ -64,7 +64,7 @@ if mods["bztin"] then
         end
 
         if misc.difficulty > 1 then
-            if not mods["IfNickel"] then
+            if not mods["IfNickelMk2"] then
                 rm.ReplaceIngredientProportional("hardened-hull", "iron-plate", "bronze-plate", 2)
             else
                 rm.AddIngredient("hardened-hull", "bronze-plate", 2)
@@ -92,7 +92,7 @@ if mods["bztin"] then
             tm.RemovePrerequisite("oil-gathering", "tinned-cable")
 
             --Also you know what? My intermediate now
-            if not mods["ThemTharHills"] then
+            if not mods["ThemTharHillsMk2"] then
                 rm.ReplaceIngredientProportional("advanced-circuit", "copper-cable", "tinned-cable")
             end
         end

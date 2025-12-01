@@ -64,13 +64,13 @@ if mods["maraxsis"] then
     rm.AddProduct("maraxsis-geothermal-sulfur", "sphalerite", 8)
 
     if misc.difficulty == 3 then
-        if not mods["IfNickel"] then
+        if not mods["IfNickelMk2"] then
             rm.ReplaceIngredientProportional("maraxsis-hydro-plant", "pipe", "galvanized-tubing")
         end
     end
 
     rm.ReplaceIngredientProportional("maraxsis-pressure-dome", "pipe", "pump", 0.2)
-    if misc.difficulty > 1 and not mods["BrimStuff"] then
+    if misc.difficulty > 1 and not mods["BrimStuffMk2"] then
         rm.AddIngredient("maraxsis-wyrm-confinement-cell", "pipe-flange", 1)
     end
 
@@ -152,12 +152,12 @@ if mods["Paracelsin"] then
 
         rm.ReplaceIngredientProportional("elevated-pipe", "iron-stick", "loadbearing-lattice", 0.2)
         rm.ReplaceIngredientProportional("elevated-pipe", "pipe", "galvanized-tubing")
-        if not mods["IfNickel"] then
+        if not mods["IfNickelMk2"] then
             rm.AddIngredient("electrochemical-plant", "galvanized-tubing", 20)
         end
 
         rm.AddIngredient("nitric-acid-rocket-fuel", "galvanized-panel")
-        if not mods["BrimStuff"] then
+        if not mods["BrimStuffMk2"] then
             rm.AddIngredient("nitric-acid-rocket-fuel", "pipe-flange")
         end
     end
@@ -181,12 +181,12 @@ if mods["castra"] then
 
         rm.AddIngredient("battery-nickel", "galvanized-panel")
         rm.AddIngredient("rocket-fuel-sulfur", "galvanized-panel")
-        if not mods["BrimStuff"] then
+        if not mods["BrimStuffMk2"] then
             rm.AddIngredient("rocket-fuel-sulfur", "pipe-flange")
         end
 
         rm.AddIngredient("forge", "complex-joint", 12)
-        if not mods["IfNickel"] then
+        if not mods["IfNickelMk2"] then
             rm.ReplaceIngredientProportional("engine-unit-gunpowder", "pipe", "galvanized-tubing")
         end
     end

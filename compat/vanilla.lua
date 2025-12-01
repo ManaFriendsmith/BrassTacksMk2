@@ -5,7 +5,7 @@ local misc = require("__pf-functions__/misc")
 --INTERMEDIATE PRODUCTS
 rm.RemoveIngredient("iron-gear-wheel", "iron-plate", 1)
 rm.AddIngredient("iron-gear-wheel", "brass-plate", 1)
-data.raw.item["iron-gear-wheel"].icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/iron-gear-wheel.png")
+data.raw.item["iron-gear-wheel"].icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/iron-gear-wheel.png")
 
 tm.AddUnlock("lubricant", "brass-balls")
 tm.AddUnlock("lubricant", "bearing")
@@ -16,11 +16,11 @@ if misc.difficulty > 1 then
     tm.AddUnlock("steam-power", "pipe-flange", "-pipe")
     tm.AddUnlock("steam-power", "flywheel", "-steam-engine")
 
-    if mods["BrimStuff"] then
+    if mods["BrimStuffMk2"] then
         rm.ReplaceIngredientProportional("airtight-seal", "copper-plate", "pipe-flange", 0.5)
     end
 
-    data.raw.technology["electric-engine"].icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "technology/mechanical-engineering-2.png")
+    data.raw.technology["electric-engine"].icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "technology/mechanical-engineering-2.png")
     data.raw.technology["electric-engine"].localised_name = {"technology-name.mechanical-engineering-2"}
     data.raw.technology["electric-engine"].localised_description = {"technology-description.mechanical-engineering-2"}
     data.raw.technology["electric-engine"].unit.count = 100
@@ -59,18 +59,18 @@ if misc.difficulty > 1 then
         rm.AddIngredient("satellite", "gyro", 50)
     end
 
-    if mods["IfNickel"] then
+    if mods["IfNickelMk2"] then
         rm.ReplaceIngredientProportional("gimbaled-rocket-engine", "iron-gear-wheel", "complex-joint", 0.2)
         rm.ReplaceIngredientProportional("motorized-arm", "iron-stick", "linkages", 0.33)
     end
 end
 
-if mods["IfNickel"] and misc.difficulty > 1 and not mods["BrimStuff"] then
+if mods["IfNickelMk2"] and misc.difficulty > 1 and not mods["BrimStuffMk2"] then
     rm.ReplaceIngredientProportional("high-pressure-valve", "copper-plate", "brass-plate")
 end
 
 if misc.difficulty == 3 then
-    if mods["IfNickel"] then
+    if mods["IfNickelMk2"] then
         if misc.starting_planet ~= "vulcanus" then
             tm.AddPrerequisite("high-pressure-valve", "electroplating")
         end
@@ -107,7 +107,7 @@ end
 if misc.difficulty == 3 then
     rm.ReplaceIngredientProportional("flying-robot-frame", "steel-plate", "malleable-logarithmic-casing", 2)
     rm.ReplaceIngredientProportional("uranium-fuel-cell", "iron-plate", "malleable-logarithmic-casing", 0.5)
-    if mods["ThemTharHills"] then
+    if mods["ThemTharHillsMk2"] then
         rm.AddIngredient("stepper-motor", "malleable-logarithmic-casing")
     end
 end
@@ -116,13 +116,13 @@ rm.ReplaceIngredientProportional("refined-concrete", "steel-plate", "galvanized-
 if misc.difficulty == 3 then
     rm.ReplaceIngredientProportional("refined-concrete", "iron-stick", "galvanized-rod")
 
-    if mods["IfNickel"] then
+    if mods["IfNickelMk2"] then
         rm.ReplaceIngredientProportional("ambifacient-lunar-waneshaft", "iron-stick", "galvanized-rod")
     end
 end
 
 if misc.difficulty == 3 then
-    if not mods["BrimStuff"] then
+    if not mods["BrimStuffMk2"] then
         if mods["space-age"] or not mods["LunarLandings"] then
             rm.AddIngredient("rocket-fuel", "pipe-flange", 1)
         end
@@ -138,7 +138,7 @@ if misc.difficulty == 3 then
     rm.AddIngredient("ammonia-rocket-fuel", "galvanized-panel", 1)
     rm.AddIngredient("maraxsis-hydrolox-rocket-fuel", "galvanized-panel", 1)
 
-elseif misc.difficulty == 2 and not (mods["space-age"] or mods["BrimStuff"] or mods["LunarLandings"]) then
+elseif misc.difficulty == 2 and not (mods["space-age"] or mods["BrimStuffMk2"] or mods["LunarLandings"]) then
     rm.AddIngredient("rocket-fuel", "pipe-flange", 1)
 end
 
@@ -191,7 +191,7 @@ else
     rm.AddIngredient("storage-tank", "pipe-flange", 4)
     rm.AddIngredient("boiler", "pipe-flange", 3)
     rm.AddIngredient("offshore-pump", "pipe-flange", 1)
-    if not mods["BrimStuff"] then
+    if not mods["BrimStuffMk2"] then
         rm.AddIngredient("pump", "pipe-flange", 2)
         rm.AddIngredient("flamethrower-ammo", "pipe-flange", 1)
         if rm.GetIngredientCount("flamethrower-ammo", "steel-plate") >= 5 then
@@ -219,7 +219,7 @@ rm.ReplaceIngredientProportional("fast-inserter", "iron-plate", "iron-gear-wheel
 if misc.difficulty > 1 then
     rm.ReplaceIngredientProportional("burner-inserter", "iron-plate", "linkages")
     rm.ReplaceIngredientProportional("inserter", "iron-plate", "linkages")
-    if difficulty == 2 and mods["IfNickel"] then --gears quasi-represent motors when motors don't exist as an item
+    if difficulty == 2 and mods["IfNickelMk2"] then --gears quasi-represent motors when motors don't exist as an item
         rm.RemoveIngredient("inserter", "iron-gear-wheel", 1)
     end
     rm.ReplaceIngredientProportional("long-handed-inserter", "iron-plate", "linkages")
@@ -260,7 +260,7 @@ else
         rm.AddIngredient("turbo-transport-belt", "express-gearbox", 1)
         rm.AddIngredient("turbo-underground-belt", "express-gearbox", 8)
         rm.AddIngredient("turbo-splitter", "express-gearbox", 2)
-        if not mods["BrimStuff"] then
+        if not mods["BrimStuffMk2"] then
             rm.AddIngredient("express-transport-belt", "bearing", 2)
             rm.AddIngredient("express-underground-belt", "bearing", 16)
             rm.AddIngredient("express-splitter", "bearing", 4)
@@ -327,8 +327,8 @@ if misc.difficulty == 3 then
     rm.RemoveIngredient("rail-chain-signal", "iron-plate", 99999)
     rm.AddIngredient("rail-signal", "malleable-logarithmic-casing", 1)
     rm.AddIngredient("rail-chain-signal", "malleable-logarithmic-casing", 1)
-    rm.AddIngredient("rail-signal", "galvanized-panel", mods["ThemTharHills"] and 1 or 2)
-    rm.AddIngredient("rail-chain-signal", "galvanized-panel", mods["ThemTharHills"] and 1 or 2)
+    rm.AddIngredient("rail-signal", "galvanized-panel", mods["ThemTharHillsMk2"] and 1 or 2)
+    rm.AddIngredient("rail-chain-signal", "galvanized-panel", mods["ThemTharHillsMk2"] and 1 or 2)
 else
     rm.ReplaceIngredientProportional("rail-support", "steel-plate", "galvanized-steel-plate")
     rm.ReplaceIngredientProportional("rail-ramp", "steel-plate", "galvanized-steel-plate")    
@@ -367,7 +367,7 @@ end
 
 --MINING
 if misc.difficulty > 1 then
-    if mods["IfNickel"] then --gears quasi-represent motors when motors don't exist as an item
+    if mods["IfNickelMk2"] then --gears quasi-represent motors when motors don't exist as an item
         rm.ReplaceIngredientProportional("electric-mining-drill", "iron-gear-wheel", "linkages")
     end
 
@@ -404,12 +404,12 @@ end
 if misc.difficulty == 3 then
     if misc.starting_planet ~= "vulcanus" then
         rm.AddIngredient("chemical-plant", "galvanized-tubing", 5)
-        if not mods["BrimStuff"] then
+        if not mods["BrimStuffMk2"] then
             rm.RemoveIngredient("chemical-plant", "pipe", 5)
         end
     end
     rm.AddIngredient("oil-refinery", "galvanized-tubing", 10)
-    if not mods["BrimStuff"] then
+    if not mods["BrimStuffMk2"] then
         rm.RemoveIngredient("oil-refinery", "pipe", 10)
     end
 end
@@ -537,7 +537,7 @@ elseif misc.difficulty > 1 then
 end
 
 if misc.difficulty < 3 then
-    if mods["IfNickel"] then
+    if mods["IfNickelMk2"] then
         if misc.difficulty == 1 then
             rm.AddIngredient("laser-turret", "iron-gear-wheel", 5)
         end
@@ -566,13 +566,13 @@ if misc.difficulty ~= 1 then
         tm.AddPrerequisite("fluid-handling", "hardened-hull")
     else
         tm.AddUnlock("electroplating", "hardened-hull", "-loadbearing-lattice")
-        if mods["IfNickel"] then
+        if mods["IfNickelMk2"] then
             tm.AddPrerequisite("fluid-handling", "invar-processing")
         end
     end
     if misc.difficulty == 3 then
         
-        if mods["IfNickel"] then
+        if mods["IfNickelMk2"] then
             if misc.starting_planet ~= "vulcanus" then
                 rm.ReplaceIngredientProportional("high-pressure-valve", "pipe", "galvanized-tubing")
             end

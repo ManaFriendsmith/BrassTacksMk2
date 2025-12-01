@@ -1,10 +1,11 @@
 {
-    "name": "BrassTacks",
+    "name": "BrassTacksMk2",
     "version": "2.0.0",
-    "title": "Brass Tacks",
+    "title": "Brass Tacks Mk. 2",
     "author": "planetfall",
     "homepage": "",
-    "description": "Adds zinc, brass and related intermediates.",
+    "source": "https://github.com/ManaFriendsmith/BrassTacksMk2",
+    "description": "More Materials: Zinc, brass and mechanical parts.",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0", "pf-functions", "? space-age", "? pf-sa-compat", "~ ZZZ-RecyclerFinalFinal", "? bztin", "? bztitanium", "? bzzirconium", "? bzsilicon", "? Paracelsin", "? castra", "? LunarLandings"]
 }

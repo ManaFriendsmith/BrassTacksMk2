@@ -125,7 +125,7 @@ if mods["LunarLandings"] then
             category = "ll-electric-smelting",
             subgroup = "ll-raw-material-moon",
             order = "a[moon-rock]-d",
-            icon = "__BrassTacks__/graphics/icons/cheese-ore.png",
+            icon = "__BrassTacksMk2__/graphics/icons/cheese-ore.png",
             icon_size = 64,
             energy_required = 10,
             ingredients = {
@@ -343,7 +343,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/galvanized-steel-plate.png"),
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
                         icon_size = 64
                       },
                       {
@@ -381,7 +381,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "brass-separation",
-            icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-separation.png"),
+            icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-separation.png"),
             icon_size = 64,
             category = "centrifuging",
             ingredients = {
@@ -430,7 +430,7 @@ if mods["space-age"] then
             ingredients = {
                 {type="item", name="brass-asteroid-chunk", amount=1},
             },
-            results = (mods["IfNickel"] and misc.difficulty == 3) and {
+            results = (mods["IfNickelMk2"] and misc.difficulty == 3) and {
                 {type="item", name="malachite", amount=5},
                 {type="item", name="sphalerite", amount=2},
                 {type="item", name="brass-asteroid-chunk", amount=1, probability=0.05}
@@ -623,7 +623,7 @@ if mods["space-age"] then
                         icon_size = 64
                     },
                     {
-                        icon = "__BrassTacks__/graphics/icons/zinc-ore.png",
+                        icon = "__BrassTacksMk2__/graphics/icons/zinc-ore.png",
                         icon_size = 64,
                         scale = 0.25,
                         shift = {0, 8}
@@ -653,11 +653,11 @@ if mods["space-age"] then
                 name = "bullet-casing-sorting",
                 icons = {
                     {
-                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-plate.png"),
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-plate.png"),
                         icon_size = 64
                     },
                     {
-                        icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+                        icon = "__BrassTacksMk2__/graphics/icons/ancient-military-wreckage.png",
                         icon_size = 64
                     }
                 },
@@ -683,7 +683,7 @@ if mods["space-age"] then
                             icon_size = 64
                         },
                         {
-                            icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+                            icon = "__BrassTacksMk2__/graphics/icons/ancient-military-wreckage.png",
                             icon_size = 64
                         },
                         {
@@ -699,7 +699,7 @@ if mods["space-age"] then
                     {type="item", name="brass-plate", amount=1, extra_count_fraction = 0.75},
                     {type="item", name="gunpowder", amount=1, probability = 0.25},
                     {type="item", name="millerite", amount=1, probability = 0.18},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1, probability = 0.16},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1, probability = 0.16},
                     {type="item", name="engine-unit", amount=1, probability = 0.03},
                     {type="item", name="electric-engine-unit", amount=1, probability = 0.03},
                     {type="item", name="steel-plate", amount=1, probability = 0.02},
@@ -724,7 +724,7 @@ if mods["space-age"] then
                 localised_description = {"recipe-description.blast-galvanizing"},
                 icons = {
                     {
-                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/galvanized-steel-plate.png"),
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
                         icon_size = 64
                     },
                     {
@@ -740,7 +740,7 @@ if mods["space-age"] then
                 additional_categories = {"castra-forge"},
                 ingredients = {
                     {type="item", name="steel-plate", amount=1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=3},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=3},
                     {type="item", name="gunpowder", amount=3},
                 },
                 results = {
@@ -945,7 +945,7 @@ if mods["space-age"] then
                 name = "flywheel-nickel",
                 icons = {
                     {
-                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/flywheel.png"),
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/flywheel.png"),
                         icon_size = 64
                     },
                     {
@@ -961,7 +961,7 @@ if mods["space-age"] then
                 category = "crafting",
                 ingredients = {
                     {type="item", name="iron-gear-wheel", amount=1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=5},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=5},
                 },
                 results = {
                     {type="item", name="flywheel", amount=1}
@@ -976,7 +976,7 @@ if mods["space-age"] then
                 name = "hardened-hull-nickel",
                 icons = {
                     {
-                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/hardened-hull.png"),
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/hardened-hull.png"),
                         icon_size = 64
                     },
                     {
@@ -1005,7 +1005,7 @@ if mods["space-age"] then
             }
         })
 
-        if mods["IfNickel"] then
+        if mods["IfNickelMk2"] then
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "invar-plate")
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "galvanized-steel-plate", "cst-nickel-plate", 4)
 
@@ -1073,7 +1073,7 @@ data:extend({
         type = "recipe",
         name = "depleted-zinc-salt-reprocessing",
         category = "electroplating",
-        icon = "__BrassTacks__/graphics/vector/icons/depleted-zinc-salts.png",
+        icon = "__BrassTacksMk2__/graphics/vector/icons/depleted-zinc-salts.png",
         icon_size = 64,
         subgroup = "electroplating",
         order = "z",
@@ -1294,7 +1294,7 @@ if mods["space-age"] then
                 localised_description = {"recipe-description.blast-galvanizing"},
                 icons = {
                     {
-                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-panel.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
                         icon_size = 64
                     },
                     {
@@ -1310,7 +1310,7 @@ if mods["space-age"] then
                 additional_categories = {"castra-forge"},
                 ingredients = {
                     {type="item", name="iron-plate", amount=1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1},
                     {type="item", name="gunpowder", amount=1},
                 },
                 results = {
@@ -1326,7 +1326,7 @@ if mods["space-age"] then
                 localised_description = {"recipe-description.blast-galvanizing"},
                 icons = {
                     {
-                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-rod.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
                         icon_size = 64
                     },
                     {
@@ -1342,7 +1342,7 @@ if mods["space-age"] then
                 additional_categories = {"castra-forge"},
                 ingredients = {
                     {type="item", name="iron-stick", amount=1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1},
                     {type="item", name="gunpowder", amount=1},
                 },
                 results = {
@@ -1358,7 +1358,7 @@ if mods["space-age"] then
                 localised_description = {"recipe-description.blast-galvanizing"},
                 icons = {
                     {
-                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-tubing.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
                         icon_size = 64
                     },
                     {
@@ -1374,7 +1374,7 @@ if mods["space-age"] then
                 additional_categories = {"castra-forge"},
                 ingredients = {
                     {type="item", name="pipe", amount=1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1},
                     {type="item", name="gunpowder", amount=1},
                 },
                 results = {
@@ -1419,7 +1419,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-panel.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
                         icon_size = 64
                       },
                       {
@@ -1453,7 +1453,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-rod.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
                         icon_size = 64
                       },
                       {
@@ -1487,7 +1487,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-tubing.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
                         icon_size = 64
                       },
                       {

@@ -117,6 +117,31 @@ data:extend({
     },
 })
 
+if mods["LunarLandings"] then
+    data:extend({
+        {
+            type = "recipe",
+            name = "cheese-ore-processing",
+            category = "ll-electric-smelting",
+            subgroup = "ll-raw-material-moon",
+            order = "a[moon-rock]-d",
+            icon = "__BrassTacks__/graphics/icons/cheese-ore.png",
+            icon_size = 64,
+            energy_required = 10,
+            ingredients = {
+                {type="item", name="cheese-ore", amount=20}
+            },
+            results = {
+                {type="item", name="zinc-ore", amount=10},
+                {type="item", name="ll-moon-rock", amount=3},
+                {type="fluid", name="light-oil", amount=10, fluidbox_index = 1}
+            },
+            always_show_products = true,
+            enabled = false
+        }
+    })
+end
+
 if tune_up_data then
   if not mods["space-age"] then
     tune_up_data.recipes["zinc-ore"] = {
@@ -643,9 +668,9 @@ if mods["space-age"] then
                     {type="item", name="ancient-military-wreckage", amount=1}
                 },
                 results = {
-                    {type="item", name="brass-plate", amount=1}
+                    {type="item", name="brass-plate", amount=2}
                 },
-                energy_required = 1,
+                energy_required = 2,
                 enabled = false
             },
             {
@@ -671,20 +696,21 @@ if mods["space-age"] then
                     {type="item", name="ancient-military-wreckage", amount=1}
                 },
                 results = {
-                    {type="item", name="brass-plate", amount=1, probability = 0.75},
-                    {type="item", name="gunpowder", amount=1, probability = 0.16},
-                    {type="item", name="millerite", amount=1, probability = 0.1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1, probability = 0.1},
+                    {type="item", name="brass-plate", amount=1, extra_count_fraction = 0.75},
+                    {type="item", name="gunpowder", amount=1, probability = 0.25},
+                    {type="item", name="millerite", amount=1, probability = 0.18},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1, probability = 0.16},
                     {type="item", name="engine-unit", amount=1, probability = 0.03},
                     {type="item", name="electric-engine-unit", amount=1, probability = 0.03},
                     {type="item", name="steel-plate", amount=1, probability = 0.02},
                     {type="item", name="castra-data", amount=1, probability = 0.01},
+                    {type="item", name="explosive-cannon-shell", amount=1, probability = 0.01},
                     {type="item", name="land-mine", amount=1, probability = 0.01},
                     {type="item", name="submachine-gun", amount=1, probability = 0.01},
                     {type="item", name="rocket-launcher", amount=1, probability = 0.01},
                 },
                 bespoke = "ancient-military-wreckage",
-                energy_required = 1,
+                energy_required = 2,
                 subgroup = "castra-processes",
                 order = "ab",
                 enabled = false,
@@ -736,7 +762,7 @@ data:extend({
     {
         type = "recipe",
         name = "pipe-flange",
-        category = mods["maraxsis"] and "maraxsis-hydro-plant-or-assembling" or "crafting",
+        category = "crafting",
         ingredients = {
             {type="item", name="brass-plate", amount=2}
         },
@@ -1531,4 +1557,23 @@ if mods["quality"] then
         rm.AddProduct("tinned-cable", {type="item", name="tinned-cable", amount=0, ignored_by_productivity=8})
     end
 else
+end
+
+if mods["LunarLandings"] then
+    data:extend({
+        {
+            type = "recipe",
+            name = "skyseeker-armature",
+            energy_required = 10,
+            ingredients = {
+                {type="item", name="electric-engine-unit", amount=2},
+                {type="item", name="low-density-structure", amount=1},
+                {type="item", name="bearing", amount=4}
+            },
+            results = {
+                {type="item", name="skyseeker-armature", amount=1}
+            },
+            enabled = false
+        }
+    })
 end

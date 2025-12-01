@@ -1,6 +1,34 @@
 local misc = require("__pf-functions__/misc")
 local tm = require("__pf-functions__/technology-manipulation")
 
+if mods["LunarLandings"] then
+    data:extend({
+        {
+            type = "technology",
+            name = "lunar-cheese-exploitation",
+            icon = "__BrassTacks__/graphics/technology/lunar-cheese-exploitation.png",
+            icon_size = 64,
+            effects = {
+                {
+                    type = "unlock-recipe",
+                    recipe = "cheese-ore-processing"
+                }
+            },
+            prerequisites = {"production-science-pack"},
+            unit = {
+                count = 300,
+                time = 15,
+                ingredients = {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1}
+                }
+            }
+        }
+    })
+end
+
 if misc.difficulty > 1 then
     data:extend({
         {

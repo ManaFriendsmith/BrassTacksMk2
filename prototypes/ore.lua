@@ -58,7 +58,7 @@ data:extend({
     type = "autoplace-control",
     category = "resource",
     name = "zinc-ore",
-    localised_name = {"", (mods["LunarLandings"] and "[virtual-signal=ll-nauvis] " or "") .. "[entity=zinc-ore] ", {"entity-name.zinc-ore"}},
+    localised_name = {"", "[entity=zinc-ore] ", {"entity-name.zinc-ore"}},
     richness = true,
     order = "a-e"
   }
@@ -96,7 +96,7 @@ if mods["LunarLandings"] then
         has_starting_area_placement = false,
         regular_rq_factor_multiplier = 1.0,
         starting_rq_factor_multiplier = 1.1,
-        candidate_spot_count = 22
+        candidate_spot_count = 16
       },
       stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
       stages =
@@ -119,13 +119,17 @@ if mods["LunarLandings"] then
       type = "autoplace-control",
       category = "resource",
       name = "cheese-ore",
-      localised_name = {"", "[virtual-signal=ll-luna] [entity=cheese-ore] ", {"entity-name.cheese-ore"}},
+      localised_name = {"", "[entity=cheese-ore] ", {"entity-name.cheese-ore"}},
       richness = true,
       order = "d-ca"
     }
   })
+
   data.raw.resource["cheese-ore"].autoplace.default_enabled = false
   data.raw.resource["cheese-ore"].autoplace.tile_restriction = {"ll-luna-plain"}
+
+  data.raw.planet["luna"].map_gen_settings.autoplace_controls["cheese-ore"] = {}
+  data.raw.planet["luna"].map_gen_settings.autoplace_settings.entity.settings["cheese-ore"] = {}
 end
 
 data.raw.planet["nauvis"].map_gen_settings.autoplace_controls["zinc-ore"] = {}

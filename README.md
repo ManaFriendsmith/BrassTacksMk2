@@ -1,6 +1,14 @@
 # ABOUT
 
-This is a mod for Factorio blah blah blah write this later. It adds resources and stuff.
+This is a mod for Factorio which adds zinc, brass, and related production chains.
+
+Features include:
+
+- Recipes and intermediate products that integrate deeply with the vanilla crafting tree: brass is NOT a niche side resource added to a handful of random recipes, but a core part of your production
+- Multiple difficulty settings
+- Compatibility with Space Age and many planet mods
+
+See the factorio mod portal description (modportal.md) for more details.
 
 # DEPENDENCIES
 
@@ -26,7 +34,7 @@ There are two ways to control the difficulty: a global setting that's part of pf
 
 - Planetfall - Design, code, original vector graphics
 - [AtelierAmber](https://github.com/AtelierAmber) - Brass Tacks Legacy
-- [Galdoc](https://www.youtube.com/@galdocstutorials/videos) - 3D rendered icon graphics (not yet implemented for 2.0), thumbnail
+- [Galdoc](https://www.youtube.com/@galdocstutorials) - 3D rendered icon graphics
 - [Sigmaleph](https://sigmaleph.tumblr.com/) - Pre-2.0 Spanish localization (2.0 too frequently changing to warrant translating yet)
 
 # LICENSE

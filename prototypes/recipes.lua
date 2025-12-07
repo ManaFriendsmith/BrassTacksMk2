@@ -40,6 +40,7 @@ data:extend({
         results = {
             {type="item", name="brass-precursor", amount=2}
         },
+        auto_recycle = false,
         energy_required = 0.5,
         enabled = true
     },

@@ -138,6 +138,7 @@ if mods["LunarLandings"] then
                 {type="fluid", name="light-oil", amount=10, fluidbox_index = 1}
             },
             always_show_products = true,
+            auto_recycle = false,
             enabled = false
         }
     })
@@ -331,27 +332,26 @@ if mods["quality"] then
     end
     
     data.raw.item["galvanized-steel-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
-
+    data.raw.item["galvanized-steel-plate"].auto_recycle = false
 
     data:extend({
         {
             type = "recipe",
-            name = "custom-galvanized-steel-plate-recycling",
+            name = "galvanized-steel-plate-recycling",
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-steel-plate"}},
             icons = {
                       {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64,
-                        scale = 0.75
-                      },
-                      {
-                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
                         icon_size = 64
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
                         icon_size = 64,
-                        scale = 0.75
+                        scale = 0.66
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
                       }
             },
             category = "recycling",
@@ -362,7 +362,6 @@ if mods["quality"] then
                 {type="item", name="steel-plate", amount=1, probability = 0.75},
                 {type="item", name="zinc-ore", amount=1, probability = 0.1}
             },
-            bespoke = "galvanized-steel-plate",
             energy_required = 1/16,
             allow_productivity = false,
             allow_quality = false, -- not lossy enough to be balanced against other recycling recipes
@@ -379,8 +378,42 @@ if mods["space-age"] then
     --data.raw.item["brass-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
     --data.raw.item["zinc-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
 
-    data.raw.recipe["brass-plate"].force_auto_recycle = true
+    data.raw.item["brass-plate"].auto_recycle = false
     data:extend({
+        {
+            type = "recipe",
+            name = "brass-plate-recycling",
+            localised_name = {"recipe-name.recycling", {"item-name.brass-plate"}},
+            icons = {
+                      {
+                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon_size = 64
+                      },
+                      {
+                        icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-plate.png"),
+                        icon_size = 64,
+                        scale = 0.33
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
+                      }
+            },
+            category = "recycling",
+            ingredients = {
+                {type="item", name="brass-plate", amount=1}
+            },
+            results = {
+                {type="item", name="brass-precursor", amount=1, probability = 0.25}
+            },
+            energy_required = 0.1,
+            allow_productivity = false,
+            allow_quality = false, -- not lossy enough to be balanced against other recycling recipes
+            enabled = true,
+            hidden = true,
+            allow_decomposition = false,
+            unlock_results = false
+        },
         {
             type = "recipe",
             name = "brass-separation",
@@ -397,6 +430,7 @@ if mods["space-age"] then
             subgroup = "fulgora-processes",
             order = "a[trash]-ab",
             energy_required = 0.125,
+            auto_recycle = false,
             allow_productivity = false,
             allow_quality = false,
             allow_decomposition = false,
@@ -418,6 +452,7 @@ if mods["space-age"] then
                 {type="item", name="brass-asteroid-chunk", amount=1, probability=0.2}
             },
             energy_required = 2,
+            auto_recycle = false,
             allow_productivity = true,
             allow_decomposition = false,
             enabled = false
@@ -443,6 +478,7 @@ if mods["space-age"] then
                 {type="item", name="brass-asteroid-chunk", amount=1, probability=0.05}
             },
             energy_required = 5,
+            auto_recycle = false,
             allow_productivity = true,
             allow_decomposition = false,
             enabled = false
@@ -484,6 +520,7 @@ if mods["space-age"] then
                 {type="item", name="sulfur", amount=10}
             },
             energy_required = 32,
+            auto_recycle = false,
             allow_productivity = true,
             enabled = false
         },
@@ -504,6 +541,7 @@ if mods["space-age"] then
                 {type="fluid", name="molten-zinc", amount=500, fluidbox_multiplier=10}
             },
             energy_required = 16,
+            auto_recycle = false,
             allow_productivity = true,
             enabled = false
         },
@@ -525,6 +563,7 @@ if mods["space-age"] then
                 {type="item", name="stone", amount=15},
             },
             energy_required = 16,
+            auto_recycle = false,
             allow_productivity = true,
             enabled = false
         },
@@ -543,6 +582,7 @@ if mods["space-age"] then
                 {type="item", name="zinc-plate", amount=2}
             },
             energy_required = 3.2,
+            auto_recycle = false,
             allow_productivity = true,
             enabled = false
         },
@@ -562,6 +602,7 @@ if mods["space-age"] then
                 {type="item", name="brass-plate", amount=2}
             },
             energy_required = 3.2,
+            auto_recycle = false,
             allow_productivity = true,
             enabled = false
         },
@@ -583,6 +624,7 @@ if mods["space-age"] then
             },
             localised_description = {"recipe-description.hint-no-foundry-productivity"},
             maximum_productivity = 0,
+            auto_recycle = false,
             energy_required = 2,
             enabled = false
         },
@@ -602,6 +644,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="zinc-bacteria", amount=3}
             },
+            auto_recycle = false,
             energy_required = 2,
             allow_productivity = true,
             result_is_always_fresh = true,
@@ -643,6 +686,7 @@ if mods["space-age"] then
                 results = {
                     {type="item", name="zinc-ore", amount=5}
                 },
+                auto_recycle = false,
                 energy_required = 15,
                 enabled = false
             }
@@ -673,12 +717,13 @@ if mods["space-age"] then
                 results = {
                     {type="item", name="brass-plate", amount=2}
                 },
+                auto_recycle = false,
                 energy_required = 2,
                 enabled = false
             },
             {
                 type = "recipe",
-                name = "custom-ancient-military-wreckage-recycling",
+                name = "ancient-military-wreckage-recycling",
                 localised_name = {"recipe-name.recycling", {"item-name.ancient-military-wreckage"}},
                 icons = {
                         {
@@ -713,6 +758,7 @@ if mods["space-age"] then
                     {type="item", name="rocket-launcher", amount=1, probability = 0.01},
                 },
                 bespoke = "ancient-military-wreckage",
+                auto_recycle = false,
                 energy_required = 2,
                 subgroup = "castra-processes",
                 order = "ab",
@@ -750,6 +796,7 @@ if mods["space-age"] then
                     {type="item", name="galvanized-steel-plate", amount=1, probability=0.5},
                     {type="item", name="ancient-military-wreckage", amount=1, probability=0.01}
                 },
+                auto_recycle = false,
                 energy_required = 1,
                 enabled = false
             }
@@ -916,6 +963,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="flywheel", amount=1}
             },
+            auto_recycle = false,
             energy_required = 1,
             allow_productivity = true,
             enabled = false
@@ -935,6 +983,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="pipe-flange", amount=1}
             },
+            auto_recycle = false,
             energy_required = 2,
             allow_productivity = true,
             enabled = false
@@ -970,6 +1019,7 @@ if mods["space-age"] then
                     {type="item", name="flywheel", amount=1}
                 },
                 lasermill_dlc = {helium=-1, unlock="millerite-processing"},
+                auto_recycle = false,
                 energy_required = 2,
                 allow_productivity = true,
                 enabled = false
@@ -1002,6 +1052,7 @@ if mods["space-age"] then
                     {type="item", name="hardened-hull", amount=1}
                 },
                 lasermill_dlc = {helium=-1, unlock="millerite-processing"},
+                auto_recycle = false,
                 energy_required = 5,
                 allow_productivity = true,
                 enabled = false
@@ -1086,6 +1137,7 @@ data:extend({
         results = {
             {type="item", name="zinc-ore", amount=1}
         },
+        auto_recycle = false,
         energy_required = 8,
         allow_productivity = (not mods["space-age"]) and true or false,
         --effectively costless compared to prodmods in the machines doing the galvanizing.
@@ -1202,7 +1254,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "spurving-bearing",
-            category = "metallurgy",
+            category = "crafting",
             surface_conditions =
             {
               {
@@ -1221,7 +1273,6 @@ if mods["space-age"] then
             },
             energy_required = 6,
             allow_productivity = true,
-            force_auto_recycle = true,
             enabled = false
         },
         {
@@ -1242,6 +1293,7 @@ if mods["space-age"] then
             },
             localised_description = {"recipe-description.hint-no-foundry-productivity"},
             maximum_productivity = 0,
+            auto_recycle = false,
             energy_required = 2,
             enabled = false
         },
@@ -1263,6 +1315,7 @@ if mods["space-age"] then
             },
             localised_description = {"recipe-description.hint-no-foundry-productivity"},
             maximum_productivity = 0,
+            auto_recycle = false,
             energy_required = 2,
             enabled = false
         },
@@ -1284,6 +1337,7 @@ if mods["space-age"] then
             },
             localised_description = {"recipe-description.hint-no-foundry-productivity"},
             maximum_productivity = 0,
+            auto_recycle = false,
             energy_required = 2,
             enabled = false
         },
@@ -1320,6 +1374,7 @@ if mods["space-age"] then
                     {type="item", name="galvanized-panel", amount=1, probability=0.5},
                     {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
                 },
+                auto_recycle = false,
                 energy_required = 0.5,
                 enabled = false
             },
@@ -1352,6 +1407,7 @@ if mods["space-age"] then
                     {type="item", name="galvanized-rod", amount=1, probability=0.5},
                     {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
                 },
+                auto_recycle = false,
                 energy_required = 0.5,
                 enabled = false
             },
@@ -1384,6 +1440,7 @@ if mods["space-age"] then
                     {type="item", name="galvanized-tubing", amount=1, probability=0.5},
                     {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
                 },
+                auto_recycle = false,
                 energy_required = 0.5,
                 enabled = false
             }
@@ -1414,22 +1471,21 @@ if mods["quality"] then
     data:extend({
         {
             type = "recipe",
-            name = "custom-galvanized-panel-recycling",
+            name = "galvanized-panel-recycling",
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-panel"}},
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64,
-                        scale = 0.75
-                      },
-                      {
-                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
                         icon_size = 64
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
                         icon_size = 64,
-                        scale = 0.75
+                        scale = 0.33
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
                       }
             },
             category = "recycling",
@@ -1450,22 +1506,21 @@ if mods["quality"] then
         },
         {
             type = "recipe",
-            name = "custom-galvanized-rod-recycling",
+            name = "galvanized-rod-recycling",
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-rod"}},
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64,
-                        scale = 0.75
-                      },
-                      {
-                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
                         icon_size = 64
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
                         icon_size = 64,
-                        scale = 0.75
+                        scale = 0.33
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
                       }
             },
             category = "recycling",
@@ -1486,22 +1541,21 @@ if mods["quality"] then
         },
         {
             type = "recipe",
-            name = "custom-galvanized-tubing-recycling",
+            name = "galvanized-tubing-recycling",
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-tubing"}},
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64,
-                        scale = 0.75
-                      },
-                      {
-                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
                         icon_size = 64
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
                         icon_size = 64,
-                        scale = 0.75
+                        scale = 0.33
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
                       }
             },
             category = "recycling",
@@ -1524,28 +1578,30 @@ if mods["quality"] then
 
     if mods["bztin"] and data.raw.item["tinned-cable"] then
         data.raw.recipe["tinned-cable"].localised_description = {"recipe-description.hint-prodmod-only-organotins"}
+        data.raw.recipe["tinned-cable"].auto_recycle = false
     
         data.raw.item["tinned-cable"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+        data.raw.item["tinned-cable"].auto_recycle = false
+
         data:extend({
             {
                 type = "recipe",
-                name = "custom-tinned-cable-recycling",
+                name = "tinned-cable-recycling",
                 localised_name = {"recipe-name.recycling", {"item-name.tinned-cable"}},
                 icons = {
                         {
                             icon = "__quality__/graphics/icons/recycling.png",
-                            icon_size = 64,
-                            scale = 0.75
+                            icon_size = 64
                           },
                           {
                             icon = "__bztin__/graphics/icons/tinned-cable.png",
                             icon_size = 64,
-                            icon_mipmaps = 4
+                            icon_mipmaps = 4,
+                            scale = 0.33
                           },
                           {
                             icon = "__quality__/graphics/icons/recycling-top.png",
-                            icon_size = 64,
-                            scale = 0.75
+                            icon_size = 64
                           }
                 },
                 category = "recycling",
@@ -1576,6 +1632,7 @@ if mods["LunarLandings"] then
             type = "recipe",
             name = "skyseeker-armature",
             energy_required = 10,
+            category = "crafting",
             ingredients = {
                 {type="item", name="electric-engine-unit", amount=2},
                 {type="item", name="low-density-structure", amount=1},

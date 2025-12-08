@@ -13,7 +13,6 @@ See the factorio mod portal description (modportal.md) for more details.
 # DEPENDENCIES
 
 - [pf-functions](https://github.com/ManaFriendsmith/pf-functions) - Library and some misc functionality that does not belong to any one content mod
-- [ZZZ-RecyclerFinalFinal](https://github.com/ManaFriendsmith/ZZZ-RecyclerFinalFinal) - Utility to ensure that mods changing an item's recipe also changes what it recycles into. Always required, simply does nothing when quality is not installed.
 - [pf-sa-compat](https://github.com/ManaFriendsmith/pf-sa-compat) - Required for compatibility with Space Age.
 
 # SERIES

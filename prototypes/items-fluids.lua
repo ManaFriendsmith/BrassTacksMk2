@@ -55,7 +55,6 @@ data:extend({
         stack_size = 50,
         default_import_location = "nauvis",
         canonical_cost = 1,
-        canonical_recipe = true,
         weight = 1*kg
       },
       {
@@ -245,7 +244,7 @@ if mods["space-age"] then
             stack_size = 50,
             default_import_location = "castra",
             canonical_cost = 10,
-            canonical_recipe = false,
+            auto_recycle = false,
             weight = 10*kg
         }
       })
@@ -370,8 +369,7 @@ end
 data:extend({
   {
     name = "electroplating",
-    type = "recipe-category",
-    can_recycle = false
+    type = "recipe-category"
   },
   {
     name = "electroplating",

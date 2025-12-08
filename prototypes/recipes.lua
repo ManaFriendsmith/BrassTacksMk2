@@ -341,7 +341,8 @@ if mods["quality"] then
             icons = {
                       {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       },
                       {
                         icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
@@ -349,7 +350,8 @@ if mods["quality"] then
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       }
             },
             category = "recycling",
@@ -1417,7 +1419,8 @@ if mods["quality"] then
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       },
                       {
                         icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
@@ -1425,7 +1428,8 @@ if mods["quality"] then
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       }
             },
             category = "recycling",
@@ -1451,7 +1455,8 @@ if mods["quality"] then
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       },
                       {
                         icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
@@ -1459,7 +1464,8 @@ if mods["quality"] then
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       }
             },
             category = "recycling",
@@ -1485,7 +1491,8 @@ if mods["quality"] then
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       },
                       {
                         icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
@@ -1493,7 +1500,8 @@ if mods["quality"] then
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       }
             },
             category = "recycling",
@@ -1526,7 +1534,8 @@ if mods["quality"] then
                 icons = {
                         {
                             icon = "__quality__/graphics/icons/recycling.png",
-                            icon_size = 64
+                            icon_size = 64,
+                            scale = 0.75
                           },
                           {
                             icon = "__bztin__/graphics/icons/tinned-cable.png",
@@ -1535,7 +1544,8 @@ if mods["quality"] then
                           },
                           {
                             icon = "__quality__/graphics/icons/recycling-top.png",
-                            icon_size = 64
+                            icon_size = 64,
+                            scale = 0.75
                           }
                 },
                 category = "recycling",

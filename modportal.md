@@ -1,10 +1,13 @@
 # IMPORTANT NOTICE #
 
 If you are looking for the 1.1 mod, look [here](https://mods.factorio.com/mod/BrassTacks).
+
 If you are looking for a 2.0 update of the 1.1 mod that works with all the overhauls it used to and is compatible with old saves, look [here](https://mods.factorio.com/mod/BrassTacks-Updated)
 
 This version is not currently compatible with Krastorio, Space Exploration, whatever seventeenth name we're calling 248k by now, etc.
+
 It is semi backwards compatible with old saves depending on how much rebuilding you want to do.
+
 It IS compatible with Space Age but requires a [separate mod](https://mods.factorio.com/mod/pf-sa-compat).
 
 Rebuilding overhaul compatibility might come at some future stage but it is not immediately planned.

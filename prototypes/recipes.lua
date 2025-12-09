@@ -360,7 +360,7 @@ if mods["quality"] then
             },
             results = {
                 {type="item", name="steel-plate", amount=1, probability = 0.75},
-                {type="item", name="zinc-ore", amount=1, probability = 0.1}
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.1}
             },
             energy_required = 1/16,
             allow_productivity = false,
@@ -404,7 +404,7 @@ if mods["space-age"] then
                 {type="item", name="brass-plate", amount=1}
             },
             results = {
-                {type="item", name="brass-precursor", amount=1, probability = 0.25}
+                {type="item", name=mods["scrap-industry"] and "brass-scrap" or "brass-precursor", amount=1, probability = 0.25}
             },
             energy_required = 0.1,
             allow_productivity = false,
@@ -421,11 +421,11 @@ if mods["space-age"] then
             icon_size = 64,
             category = "centrifuging",
             ingredients = {
-                {type="item", name="brass-precursor", amount=1}
+                {type="item", name=mods["scrap-industry"] and "brass-scrap" or "brass-precursor", amount=1}
             },
             results = {
-                {type="item", name="copper-ore", amount=1, probability = 0.03},
-                {type="item", name="zinc-ore", amount=1, probability = 0.03}
+                {type="item", name=mods["scrap-industry"] and "copper-scrap" or "copper-ore", amount=1, probability = 0.03},
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.03}
             },
             subgroup = "fulgora-processes",
             order = "a[trash]-ab",
@@ -1135,7 +1135,7 @@ data:extend({
             {type="fluid", name="depleted-zinc-salts", amount=300},
         },
         results = {
-            {type="item", name="zinc-ore", amount=1}
+            {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1}
         },
         auto_recycle = false,
         energy_required = 8,
@@ -1494,7 +1494,7 @@ if mods["quality"] then
             },
             results = {
                 {type="item", name="iron-plate", amount=1, probability = 0.75},
-                {type="item", name="zinc-ore", amount=1, probability = 0.02}
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.02}
             },
             bespoke = "galvanized-panel",
             energy_required = 1/16,
@@ -1529,7 +1529,7 @@ if mods["quality"] then
             },
             results = {
                 {type="item", name="iron-stick", amount=1, probability = 0.75},
-                {type="item", name="zinc-ore", amount=1, probability = 0.02}
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.02}
             },
             bespoke = "galvanized-rod",
             energy_required = 1/16,
@@ -1564,7 +1564,7 @@ if mods["quality"] then
             },
             results = {
                 {type="item", name="pipe", amount=1, probability = 0.75},
-                {type="item", name="zinc-ore", amount=1, probability = 0.02}
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.02}
             },
             bespoke = "galvanized-tubing",
             energy_required = 1/16,

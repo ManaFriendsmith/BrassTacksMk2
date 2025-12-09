@@ -172,8 +172,8 @@ if misc.difficulty > 1 then
         rm.AddIngredient("tesla-turret", "gyro", 10)
     end
     if mods["LasingAroundMk2"] then
-        rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="fast-gearbox", amount=1, probability=0.2})
-        rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="linkages", amount=1, probability=0.2})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="fast-gearbox", amount=1, probability=0.2})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="linkages", amount=1, probability=0.2})
     end
 end
 
@@ -191,7 +191,7 @@ if misc.difficulty == 3 then
     rm.AddProduct("ice-melting", "water", 5)
 else
     if mods["LasingAroundMk2"] then
-        rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.3})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.3})
     else
         rm.AddProduct("scrap-recycling", {type="item", name="bearing", amount=1, probability=0.03})
     end

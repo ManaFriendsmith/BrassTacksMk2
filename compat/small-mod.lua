@@ -90,9 +90,11 @@ if mods["deadlock-beltboxes-loaders"] then
     end
 end
 
-if mods["scrap-industry"] and mods["space-age"] then
-    tm.AddUnlock("foundry", "molten-zinc-from-scrap")
-    tm.AddUnlock("foundry", "brass-liquation")
+if mods["scrap-industry"] then
+    if mods["space-age"] then
+        tm.AddUnlock("foundry", "molten-zinc-from-scrap")
+        tm.AddUnlock("foundry", "brass-liquation")
+    end
 
     if data.raw.item["mech-scrap"] then
         if misc.difficulty > 1 then

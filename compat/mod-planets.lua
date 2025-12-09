@@ -203,7 +203,7 @@ if mods["castra"] then
 
         rm.AddIngredient("engine-unit-gunpowder", "linkages", 1)
         rm.AddIngredient("distractor-capsule-castra-data", "gyro", 4)
-        rm.AddProduct("custom-ancient-military-wreckage-recycling", {type="item", name="hardened-hull", amount=1, probability=0.05})
+        rm.AddProduct("ancient-military-wreckage-recycling", {type="item", name="hardened-hull", amount=1, probability=0.05})
 
         rm.AddIngredient("military-transport-belt", "hardened-hull", 2)
         rm.AddIngredient("military-underground-belt", "hardened-hull", 5)

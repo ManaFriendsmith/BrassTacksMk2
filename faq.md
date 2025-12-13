@@ -8,9 +8,9 @@ For these reasons and the simple fact that the mods are designed to be played fr
 
 # Is this compatible with 1.1 saves that had the MK. 1 version of this mod? #
 
-Sort of but not really. I've made small changes across the board like reworking how the difficulty system works, adding a few new items, moving intermediates between difficulty levels or even mods, removing items that were annoying, etc.
+Sort of but not really. I've made small changes across the board like reworking how the difficulty system works, adding a few new items, moving intermediates between difficulty levels or even between mods, removing items that were annoying, etc.
 
-In particular this version of the mod no longer has overhaul support.
+In particular this version of the mod no longer has support for major overhaul mods.
 
 If you want to continue an old save in 2.0, the incredible [Ashier](https://mods.factorio.com/user/Ashier) has created a series of forks of my original 1.1 mods that are compatible with 2.0 (but NOT SPACE AGE) without changing the old recipe progression.
 
@@ -18,7 +18,7 @@ If you want to continue an old save in 2.0, the incredible [Ashier](https://mods
 
 The simple fact of the matter is this: I want to have more hobbies other than gaming, I want to play games other than factorio, I want my time with factorio to not be 100% spent on modding, and I want my time spent on modding to not be 100% spent on compatibility.
 
-I was not having a good time whenever another overhaul-compatible-with-other-overhauls came along and I had to double the number of possible combinations of Systematic Systems of ore processing (none of which talk to each other) that I had to account for.
+I was not having a good time whenever another overhaul-compatible-with-other-overhauls came along and I had to double the number of possible combinations of Systematic Systems of ore processing (none of which talk to each other on their own) that I had to account for.
 
 If you make a bridge mod I will happily link to it, and if you make a compatibility patch I will happily incorporate it into the mod (provided you are OK with your work becoming Public Domain), I just really don't want to be on the hook for maintenance.
 

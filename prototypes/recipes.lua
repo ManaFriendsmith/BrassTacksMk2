@@ -347,7 +347,7 @@ if mods["quality"] then
                       {
                         icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/galvanized-steel-plate.png"),
                         icon_size = 64,
-                        scale = 0.66
+                        scale = 0.37
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
@@ -392,7 +392,7 @@ if mods["space-age"] then
                       {
                         icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-plate.png"),
                         icon_size = 64,
-                        scale = 0.33
+                        scale = 0.37
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
@@ -408,7 +408,6 @@ if mods["space-age"] then
             },
             energy_required = 0.1,
             allow_productivity = false,
-            allow_quality = false, -- not lossy enough to be balanced against other recycling recipes
             enabled = true,
             hidden = true,
             allow_decomposition = false,
@@ -1254,7 +1253,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "spurving-bearing",
-            category = "crafting",
+            category = "pressing",
             surface_conditions =
             {
               {
@@ -1481,7 +1480,7 @@ if mods["quality"] then
                       {
                         icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-panel.png",
                         icon_size = 64,
-                        scale = 0.33
+                        scale = 0.37
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
@@ -1516,7 +1515,7 @@ if mods["quality"] then
                       {
                         icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-rod.png",
                         icon_size = 64,
-                        scale = 0.33
+                        scale = 0.37
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
@@ -1551,7 +1550,7 @@ if mods["quality"] then
                       {
                         icon = "__BrassTacksMk2__/graphics/vector/icons/galvanized-tubing.png",
                         icon_size = 64,
-                        scale = 0.33
+                        scale = 0.37
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
@@ -1597,7 +1596,7 @@ if mods["quality"] then
                             icon = "__bztin__/graphics/icons/tinned-cable.png",
                             icon_size = 64,
                             icon_mipmaps = 4,
-                            scale = 0.33
+                            scale = 0.37
                           },
                           {
                             icon = "__quality__/graphics/icons/recycling-top.png",

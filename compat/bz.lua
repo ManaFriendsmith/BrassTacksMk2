@@ -60,6 +60,7 @@ if mods["bztin"] then
             rm.RemoveIngredient("bearing", "brass-plate", 1)
             if misc.difficulty == 2 then --don't necessarily want to exceed 4 ingredients
                 rm.AddIngredient("complex-joint", "bronze-plate", 3)
+                rm.AddIngredient("complex-joint-from-carbon", "bronze-plate", 3)
             end
         end
 
@@ -104,9 +105,11 @@ if mods["bzzirconium"] then
         if data.raw.item["cermet"] then
             rm.RemoveIngredient("assembling-machine-3", "cermet", 99999)
             rm.ReplaceIngredientProportional("complex-joint", "plastic-bar", "cermet", 0.5)
+            rm.ReplaceIngredientProportional("complex-joint-from-carbon", "plastic-bar", "cermet", 0.5)
             rm.AddIngredient("spurving-bearing", "cermet", 1)
         else
             rm.ReplaceIngredientProportional("complex-joint", "plastic-bar", "zirconia", 1)
+            rm.ReplaceIngredientProportional("complex-joint-from-carbon", "plastic-bar", "zirconia", 1)
             rm.AddIngredient("spurving-bearing", "zirconia", 3)
         end
     end

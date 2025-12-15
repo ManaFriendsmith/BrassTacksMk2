@@ -31,6 +31,7 @@ if misc.difficulty > 1 then
     if data.raw.item["nitinol-plate"] then
         tm.AddUnlock("nitinol-processing", "complex-joint")
         rm.ReplaceIngredientProportional("complex-joint", "galvanized-rod", "nitinol-plate", 0.125)
+        rm.ReplaceIngredientProportional("complex-joint-from-carbon", "galvanized-rod", "nitinol-plate", 0.125)
     else
         tm.AddUnlock("electric-engine", "complex-joint")
     end

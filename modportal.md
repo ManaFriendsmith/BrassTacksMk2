@@ -64,16 +64,18 @@ With If I Had a Nickel, advanced Brassteroid processing becomes a complex proces
 
 # Mod Compatibility #
 
-More Materials contains explicit compatibility with the following mods.
+More Materials contains explicit compatibility with the following mods. Other mods will likely technically work but may not be well integrated.
 
 ## Planet Mods ##
 - Lunar Landings
 - Maraxsis
 - Castra
 - Paracelsin
+- Muluna
 - Any Planet Start (vanilla inner planets only)
 
 ## Misc Content Mods ##
 - BZ Lead, Titanium, Silicon, Tin, Zirconium and Carbon
-- Deadlock's Stacking Beltboxes
+- Deadlock's Stacking Beltboxes & Compact Loaders
+- Scrappy Industry (note: BrimStuff is incompatible with Scrappy Chemistry)
 - Space Trains

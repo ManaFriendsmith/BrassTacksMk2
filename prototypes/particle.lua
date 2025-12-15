@@ -36,3 +36,9 @@ end
 data:extend({
   createOreParticle("zinc", "__BrassTacksMk2__/graphics/particle", 4)
 })
+
+if mods["planet-muluna"] then
+  local m_particle = createOreParticle("messingorite", "__BrassTacksMk2__/graphics/particle", 4)
+  m_particle.shadows = table.deepcopy(data.raw["optimized-particle"]["zinc-particle"].shadows)
+  data:extend({m_particle})
+end

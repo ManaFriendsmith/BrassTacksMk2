@@ -801,6 +801,26 @@ if mods["space-age"] then
             }
         })
     end
+
+    if mods["planet-muluna"] then
+        local carbon_bearing = table.deepcopy(data.raw.recipe["bearing"])
+        carbon_bearing.name = "bearing-from-carbon"
+        carbon_bearing.auto_recycle = false
+        carbon_bearing.icons = {
+            {
+                icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/bearing.png"),
+                icon_size = 64
+            },
+            {
+                icon = "__space-age__/graphics/icons/carbon.png",
+                icon_size = 64,
+                shift = {8, -8},
+                scale = 0.25
+            }
+        }
+        rm.ReplaceIngredientProportional(carbon_bearing, "lubricant", "carbon", 0.2)
+        data:extend({carbon_bearing})
+    end
 end
 
 if misc.difficulty == 1 then
@@ -1068,6 +1088,27 @@ if mods["space-age"] then
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "nickel-plate", 2)
         end
     end
+
+    if mods["planet-muluna"] then
+        local carbon_joint = table.deepcopy(data.raw.recipe["complex-joint"])
+        carbon_joint.name = "complex-joint-from-carbon"
+        carbon_joint.auto_recycle = false
+        carbon_joint.icons = {
+            {
+                icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/complex-joint.png"),
+                icon_size = 64
+            },
+            {
+                icon = "__space-age__/graphics/icons/carbon.png",
+                icon_size = 64,
+                shift = {8, -8},
+                scale = 0.25
+            }
+        }
+        rm.ReplaceIngredientProportional(carbon_joint, "lubricant", "carbon", 0.2)
+
+        data:extend({carbon_joint})
+    end
 end
 
 if misc.difficulty == 2 then
@@ -1239,6 +1280,7 @@ data:extend({
 })
 
 rm.AddIngredient("complex-joint", "galvanized-rod", 8)
+rm.AddIngredient("complex-joint-from-carbon", "galvanized-rod", 8)
 
 if mods["space-age"] then
     data.raw.recipe["hot-dip-galvanized-steel"].subgroup = "electroplating"
@@ -1625,7 +1667,7 @@ if mods["quality"] then
 else
 end
 
-if mods["LunarLandings"] then
+if mods["LunarLandings"] or mods["planet-muluna"] then
     data:extend({
         {
             type = "recipe",

@@ -7,8 +7,11 @@ if mods["Age-of-Production"] then
 end
 
 --SPACE PLATFORM
-
-tm.AddUnlock("space-platform", "brassteroid-crushing", "-cargo-bay")
+if mods["planet-muluna"] then
+    tm.AddUnlock("metallic-asteroid-crushing", "brassteroid-crushing", "-cargo-bay")
+else
+    tm.AddUnlock("space-platform", "brassteroid-crushing", "-cargo-bay")
+end
 rm.ReplaceIngredientProportional("space-science-pack", "iron-plate", "iron-gear-wheel")
 
 tm.AddUnlock("advanced-asteroid-processing", "advanced-brassteroid-crushing", "-advanced-thruster-fuel")
@@ -189,6 +192,8 @@ if misc.difficulty == 3 then
     rm.AddProduct("scrap-recycling", {type="item", name="brass-balls", amount=1, probability=0.15})
 
     rm.AddProduct("ice-melting", "water", 5)
+    rm.AddProduct("advanced-water-melting-atmosphere", "water", 5)
+    rm.AddProduct("advanced-water-melting-oxygen", "water", 5)
 else
     if mods["LasingAroundMk2"] then
         rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.3})

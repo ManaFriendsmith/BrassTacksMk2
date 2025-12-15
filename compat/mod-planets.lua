@@ -219,3 +219,21 @@ if mods["castra"] then
     tm.AddUnlock("scrap-recycling-productivity", {type="change-recipe-productivity", recipe="bullet-casing-sorting", change=0.1})
     tm.AddUnlock("scrap-recycling-productivity", {type="change-recipe-productivity", recipe="ancient-military-wreckage-recycling", change=0.1})
 end
+
+if mods["planet-muluna"] then
+    rm.AddIngredient("electric-engine-unit-from-carbon", "bearing", 1)
+    tm.AddUnlock("carbonic-asteroid-crushing", "bearing-from-carbon")
+    if misc.difficulty > 1 then
+        tm.AddUnlock("carbonic-asteroid-crushing", "complex-joint-from-carbon")
+    end
+
+    rm.AddProduct("muluna-regolith-sorting", {type="item", name="zinc-ore", amount=1, probability=0.05})
+
+    if misc.difficulty == 3 then
+        --massive increase in tungsten cost. you set it to "maximal"!
+        rm.ReplaceIngredientProportional("crusher-2", "tungsten-plate", "spurving-bearing")
+        rm.ReplaceIngredientProportional("muluna-cycling-steam-turbine", "tungsten-plate", "spurving-bearing")
+
+        rm.ReplaceIngredientProportional("muluna-telescope", "electric-engine-unit", "skyseeker-armature")
+    end
+end

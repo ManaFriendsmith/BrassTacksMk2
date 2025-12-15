@@ -220,5 +220,71 @@ if mods["castra"] then
       }
     }
   })
+end
 
+if mods["planet-muluna"] then
+  local brassteroid_sim = table.deepcopy(data.raw.resource["iron-ore"].factoriopedia_simulation)
+  brassteroid_sim.init = string.gsub(brassteroid_sim.init, "iron", "brassteroid")
+  brassteroid_sim.init = string.gsub(brassteroid_sim.init, "ore", "chunk")
+
+  data:extend({
+    {
+      type = "resource",
+      name = "brassteroid-chunk",
+      icon = "__pf-sa-compat__/graphics/icons/brass-asteroid-chunk.png",
+      icon_size = 64,
+      icon_mipmaps = 4,
+      flags = {"placeable-neutral"},
+      order="a-b-x",
+      tree_removal_probability = 0.8,
+      tree_removal_max_distance = 32 * 32,
+      minable =
+      {
+        mining_particle = "messingorite-particle",
+        mining_time = 10,
+        result = "brass-asteroid-chunk"
+      },
+      walking_sound = data.raw.resource["iron-ore"].walking_sound,
+      collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+      selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+      autoplace = resource_autoplace.resource_autoplace_settings
+      {
+        name = "brassteroid-chunk",
+        order = "a-e",
+        base_density = 9,
+        has_starting_area_placement = true,
+        regular_rq_factor_multiplier = 1.1,
+        starting_rq_factor_multiplier = 1.1,
+        richness_post_multiplier = 0.1,
+        candidate_spot_count = 22
+      },
+      stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+      stages =
+      {
+        sheet =
+        {
+          filename = "__BrassTacksMk2__/graphics/entity/messingorite-chunk.png",
+          priority = "extra-high",
+          size = 128,
+          frame_count = 8,
+          variation_count = 8,
+          scale = 0.5
+        }
+      },
+      map_color = {0.9, 0.8, 0.1},
+      mining_visualisation_tint = {r=0.8, g=0.7, b=0.2},
+      factoriopedia_simulation = brassteroid_sim
+    },
+    {
+      type = "autoplace-control",
+      category = "resource",
+      name = "brassteroid-chunk",
+      localised_name = {"", "[entity=brassteroid-chunk] ", {"entity-name.brassteroid-chunk"}},
+      richness = true,
+      order = "a-f04"
+    }
+  })
+
+  data.raw.planet["muluna"].map_gen_settings.autoplace_controls["brassteroid-chunk"] = {}
+  data.raw.planet["muluna"].map_gen_settings.autoplace_settings.entity.settings["brassteroid-chunk"] = {}
 end

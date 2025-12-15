@@ -506,7 +506,7 @@ if mods["space-age"] then
   })
 end
 
-if mods["LunarLandings"] then
+if mods["LunarLandings"] or mods["planet-muluna"] then
   data:extend({
     {
         type = "item",

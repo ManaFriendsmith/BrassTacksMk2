@@ -47,3 +47,4 @@ The assets derived from Factorio assets in this mod are:
 - ore icons in brass-separation icon (derived from copper ore and stone)
 - pipe connector for electroplating machine (derived from assembling machine pipe connector)
 - ancient military wreckage for Castra compatibility (derived from small and medium remnants)
+- messingorite entity and particle for Muluna compatibility (derived from stone entity and particle)

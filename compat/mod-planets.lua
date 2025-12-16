@@ -227,6 +227,8 @@ if mods["planet-muluna"] then
         tm.AddUnlock("carbonic-asteroid-crushing", "complex-joint-from-carbon")
     end
 
+    rm.ReplaceIngredientProportional("space-science-pack-muluna", "iron-plate", "iron-gear-wheel")
+
     rm.AddProduct("muluna-regolith-sorting", {type="item", name="zinc-ore", amount=1, probability=0.05})
 
     if misc.difficulty == 3 then
@@ -236,4 +238,17 @@ if mods["planet-muluna"] then
 
         rm.ReplaceIngredientProportional("muluna-telescope", "electric-engine-unit", "skyseeker-armature")
     end
+end
+
+if mods["Cerys-Moon-of-Fulgora"] then
+    tm.AddUnlock("cerys-nuclear-scrap-recycling", "brass-separation")
+    -- don't make prob too high or it's too easy to get iron from gears
+    if misc.difficulty > 1 then
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="flywheel", amount=1, probability=0.04})
+    else
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="zinc-plate", amount=1, probability=0.04})
+    end
+
+    rm.ReplaceIngredientProportional("cerys-space-science-pack-from-methane-ice", "iron-plate", "iron-gear-wheel")
+
 end

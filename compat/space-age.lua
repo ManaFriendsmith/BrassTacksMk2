@@ -195,10 +195,10 @@ if misc.difficulty == 3 then
     rm.AddProduct("advanced-water-melting-atmosphere", "water", 5)
     rm.AddProduct("advanced-water-melting-oxygen", "water", 5)
 else
-    if mods["LasingAroundMk2"] then
-        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.3})
+    if mods["LasingAroundMk2"] and misc.difficulty > 1 then
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.1})
     else
-        rm.AddProduct("scrap-recycling", {type="item", name="bearing", amount=1, probability=0.03})
+        rm.AddProduct("scrap-recycling", {type="item", name="bearing", amount=1, probability=0.02})
     end
 end
 

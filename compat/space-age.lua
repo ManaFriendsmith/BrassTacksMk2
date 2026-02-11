@@ -125,8 +125,14 @@ if misc.difficulty == 3 then
     rm.ReplaceIngredientProportional("agricultural-tower", "steel-plate", "galvanized-steel-plate", 1, 5)
     rm.ReplaceIngredientProportional("agricultural-tower", "steel-plate", "loadbearing-lattice")
     rm.ReplaceIngredientProportional("biochamber", "iron-plate", "galvanized-panel")
+
+    rm.AddIngredient("heating-tower", "loadbearing-lattice", 5)
 else
     rm.ReplaceIngredientProportional("agricultural-tower", "steel-plate", "galvanized-steel-plate")
+end
+
+if misc.difficulty > 1 then
+    rm.AddIngredient("heating-tower", "hardened-hull", 5)
 end
 
 if mods["IfNickelMk2"] then

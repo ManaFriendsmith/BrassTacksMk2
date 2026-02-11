@@ -82,6 +82,21 @@ if misc.difficulty == 3 then
         tm.AddPrerequisite("engine", "electroplating")
     end
     rm.ReplaceIngredientProportional("barrel", "steel-plate", "galvanized-steel-plate")
+
+    if mods["LasingAroundMk2"] then
+        if data.raw.item["tracker"] then
+            rm.AddIngredient("rocket-control-unit", "malleable-logarithmic-casing", 2)
+        end
+        rm.AddIngredient("scanner", "malleable-logarithmic-casing", 1)
+    end
+
+    --cooling fans are more interesting and thematic (and expensive)
+    if not mods["IfNickelMk2"] then
+        rm.AddIngredient("speed-module", "malleable-logarithmic-casing", 1)
+        rm.AddIngredient("efficiency-module", "malleable-logarithmic-casing", 1)
+        rm.AddIngredient("productivity-module", "malleable-logarithmic-casing", 1)
+        rm.AddIngredient("quality-module", "malleable-logarithmic-casing", 1)
+    end
 end
 
 if misc.difficulty < 3 then

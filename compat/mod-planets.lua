@@ -14,6 +14,10 @@ if mods["LunarLandings"] then
         rm.ReplaceIngredientProportional(llrs, "steel-plate", "hardened-hull", 0.5, 100)
         rm.AddIngredient(llrs, "complex-joint", 50)
         rm.ReplaceIngredientProportional(llrs, "pipe", "galvanized-tubing")
+
+        if misc.difficulty == 3 then
+            rm.AddIngredient(llrcu, "malleable-logarithmic-casing", 1)
+        end
     end
 
     --maybe this is a little mean. but it does push the player toward cheese processing

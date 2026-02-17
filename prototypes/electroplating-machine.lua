@@ -211,12 +211,10 @@ electroplater2.corpse = "advanced-electroplating-machine-remnants"
 electroplater2.graphics_set.animation.layers[1].filename = "__BrassTacksMk2__/graphics/entity/advanced-electroplating-machine.png"
 electroplater2.energy_usage = "300kW"
 electroplater2.crafting_speed = 2
-electroplater2.module_slots = 4
-if mods["quality"] then
-    electroplater2.effect_receiver = { base_effect = { productivity = mods["space-age"] and 1 or 0.5 }}
-else
-    electroplater2.energy_source.emissions_per_minute = nil
-end
+electroplater2.module_slots = 5
+electroplater2.icons_positioning = {{inventory_index = defines.inventory.crafter_modules, max_icons_per_row = 5}}
+electroplater2.effect_receiver = { base_effect = { productivity = mods["space-age"] and 0.75 or 0.5 }}
+electroplater2.energy_source.emissions_per_minute = nil
 
 local e_corpse = {
     type = "corpse",

@@ -468,7 +468,7 @@ if mods["space-age"] then
                 {type="item", name="brass-asteroid-chunk", amount=1},
             },
             results = (mods["IfNickelMk2"] and misc.difficulty == 3) and {
-                {type="item", name="malachite", amount=5},
+                {type="item", name="malachite", amount=3},
                 {type="item", name="sphalerite", amount=2},
                 {type="item", name="brass-asteroid-chunk", amount=1, probability=0.05}
             } or {

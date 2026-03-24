@@ -256,3 +256,11 @@ if mods["Cerys-Moon-of-Fulgora"] then
     rm.ReplaceIngredientProportional("cerys-space-science-pack-from-methane-ice", "iron-plate", "iron-gear-wheel")
 
 end
+
+if mods["Moshine"] then
+    table.insert(data.raw["resource"]["multi-ore"].minable.results, {type="item", name=misc.difficulty==3 and "sphalerite" or "zinc-ore", amount=1, probability=0.05})
+
+    if misc.difficulty == 3 then
+        rm.AddIngredient("datacell-empty", "malleable-logarithmic-casing")
+    end
+end

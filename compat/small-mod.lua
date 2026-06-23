@@ -99,11 +99,11 @@ if mods["scrap-industry"] then
     if data.raw.item["mech-scrap"] then
         if misc.difficulty > 1 then
             rm.AddIngredient("sort-mech-scrap", "mech-scrap", 4)
-            rm.AddProduct("sort-mech-scrap", {type="item", name="linkages", amount=1, probability=0.5})
+            rm.AddProduct("sort-mech-scrap", {type="item", name="linkages", amount=1, independent_probability=0.5})
         else
             rm.AddIngredient("sort-mech-scrap", "mech-scrap", 3)
         end
-        rm.AddProduct("sort-mech-scrap", {type="item", name="brass-plate", amount=1, probability=0.5})
+        rm.AddProduct("sort-mech-scrap", {type="item", name="brass-plate", amount=1, independent_probability=0.5})
         rm.AddProduct("sort-mech-scrap", {type="item", name="brass-scrap", amount_min=1, amount_max=3})
         data.raw.recipe["sort-mech-scrap"].energy_required = 4
 
@@ -162,4 +162,8 @@ if mods["scrap-industry"] then
         end
         ScrapIndustry.recipes["brass-balls"] = {ignore=true}
     end
+end
+
+if mods["pf-beacon-rebalance"] then
+    rm.ReplaceIngredientProportional("breaker-box", "steel-plate", "galvanized-steel-plate")
 end

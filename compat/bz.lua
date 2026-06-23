@@ -120,7 +120,7 @@ if mods["bzcarbon"] then
         rm.ReplaceIngredientProportional("electroplating-machine", "copper-plate", "graphite", 1, 10)
         --electroplating machine is also an electrolysis machine. because of reasons.
         if data.raw.recipe["fullerenes"] then
-            data.raw.recipe["fullerenes"].category = "electroplating"
+            data.raw.recipe["fullerenes"].categories={"electroplating"}
         end
     end
 end

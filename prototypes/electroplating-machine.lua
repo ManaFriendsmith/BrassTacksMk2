@@ -4,7 +4,7 @@ if misc.difficulty < 3 then
     return
 end
 
-local electroplater_pipes = assembler2pipepictures()
+local electroplater_pipes = table.deepcopy(require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures)
 electroplater_pipes.south =
 {
   filename = "__BrassTacksMk2__/graphics/entity/pipe_connector.png",

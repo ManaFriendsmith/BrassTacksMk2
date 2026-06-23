@@ -18,7 +18,7 @@ data:extend({
     {
         type = "recipe",
         name = "zinc-plate",
-        category = "smelting",
+        categories={"smelting"},
         ingredients = {
             {type="item", name="zinc-ore", amount=1}
         },
@@ -32,7 +32,7 @@ data:extend({
     {
         type = "recipe",
         name = "brass-precursor",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="zinc-plate", amount=1},
             {type="item", name="copper-plate", amount=1}
@@ -47,7 +47,7 @@ data:extend({
     {
         type = "recipe",
         name = "brass-plate",
-        category = "smelting",
+        categories={"smelting"},
         ingredients = {
             {type="item", name="brass-precursor", amount=1}
         },
@@ -62,7 +62,7 @@ data:extend({
     {
         type = "recipe",
         name = "galvanized-steel-plate",
-        category = misc.difficulty == 3 and "electroplating" or "advanced-crafting",
+        categories = misc.difficulty == 3 and {"electroplating"} or {"advanced-crafting"},
         ingredients = misc.difficulty == 3 and {
             {type="item", name="steel-plate", amount=1},
             {type="item", name="zinc-plate", amount=1},
@@ -73,9 +73,9 @@ data:extend({
         },
         results = misc.difficulty == 3 and {
             {type="fluid", name="depleted-zinc-salts", amount=10},
-            {type="item", name="galvanized-steel-plate", amount=1, ignored_by_productivity=mods["quality"] and 1 or 0}
+            {type="item", name="galvanized-steel-plate", amount=1, ignored_by_productivity=mods["recycler"] and 1 or 0}
         } or {
-            {type="item", name="galvanized-steel-plate", amount=1, ignored_by_productivity=mods["quality"] and 1 or 0}
+            {type="item", name="galvanized-steel-plate", amount=1, ignored_by_productivity=mods["recycler"] and 1 or 0}
         },
         main_product = "galvanized-steel-plate",
         energy_required = misc.difficulty == 3 and 2 or 3,
@@ -86,7 +86,7 @@ data:extend({
     {
         type = "recipe",
         name = "brass-balls",
-        category = "advanced-crafting",
+        categories={"advanced-crafting"},
         ingredients = {
             {type="item", name="brass-plate", amount=1}
         },
@@ -102,7 +102,7 @@ data:extend({
     {
         type = "recipe",
         name = "bearing",
-        category = "crafting-with-fluid",
+        categories={"crafting-with-fluid"},
         ingredients = {
             {type="item", name="brass-plate", amount=2},
             {type="item", name="brass-balls", amount=4},
@@ -123,7 +123,7 @@ if mods["LunarLandings"] then
         {
             type = "recipe",
             name = "cheese-ore-processing",
-            category = "ll-electric-smelting",
+            categories={"ll-electric-smelting"},
             subgroup = "ll-raw-material-moon",
             order = "a[moon-rock]-d",
             icon = "__BrassTacksMk2__/graphics/icons/cheese-ore.png",
@@ -147,7 +147,7 @@ end
 if tune_up_data then
   if not mods["space-age"] then
     tune_up_data.recipes["zinc-ore"] = {
-        category = "purification",
+        categories={"purification"},
         count = 5,
         energy_required = 1,
         ingredients = {{{"zinc-ore", 5}, {"stone", 1}, {"sulfuric-acid", 25}}}
@@ -155,7 +155,7 @@ if tune_up_data then
   end
 
   tune_up_data.recipes["zinc-bacteria"] = {
-    category = "purification",
+    categories={"purification"},
     count = 4,
     energy_required = 2,
     result_is_always_fresh = true,
@@ -163,154 +163,154 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["sphalerite"] = {
-      category = "purification",
+      categories={"purification"},
       count = 5,
       energy_required = 1,
       ingredients = {{{"sphalerite", 5}, {"sulfur", 1}, {"sulfuric-acid", 25}}}
   }
 
   tune_up_data.recipes["zinc-plate"] = {
-    category = "purification",
+    categories={"purification"},
     count = 10,
     energy_required = 10,
     ingredients = {{{"zinc-plate", 5}, {"sulfuric-acid", 50}, {"calcite", 1}}, {{"stone", 1}, {"zinc-ore", 5}}}
   }
 
   tune_up_data.recipes["brass-plate"] = {
-    category = "purification",
+    categories={"purification"},
     count = 10,
     energy_required = 10,
     ingredients = {{{"brass-plate", 5}, {"sulfuric-acid", 50}, {"calcite", 1}}, {{"stone", 1}, {"zinc-ore", 2}, {"copper-ore", 2}}}
   }
 
   tune_up_data.recipes["galvanized-steel-plate"] = {
-    category = "purification",
+    categories={"purification"},
     count = 1,
     energy_required = 4,
     ingredients = {{{"zinc-plate", 2}}}
   }
 
   tune_up_data.recipes["galvanized-rod"] = {
-    category = "purification",
+    categories={"purification"},
     count = 10,
     energy_required = 4,
     ingredients = {{{"zinc-plate", 2}}}
   }
 
   tune_up_data.recipes["galvanized-panel"] = {
-    category = "purification",
+    categories={"purification"},
     count = 5,
     energy_required = 4,
     ingredients = {{{"zinc-plate", 2}}}
   }
 
   tune_up_data.recipes["galvanized-tubing"] = {
-    category = "purification",
+    categories={"purification"},
     count = 5,
     energy_required = 4,
     ingredients = {{{"zinc-plate", 2}}}
   }
 
   tune_up_data.recipes["bearing"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 3,
     energy_required = 10,
     ingredients = {{{"steel-plate", 1}, {"brass-balls", 10}}}
   }
 
   tune_up_data.recipes["brass-balls"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 6,
     energy_required = 3,
     ingredients = {{{"brass-balls", 3}, {"lubricant", 10}}}
   }
 
   tune_up_data.recipes["pipe-flange"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 2,
     ingredients = {{{"galvanized-panel", 1}, {"water", 10}}}
   }
 
   tune_up_data.recipes["linkages"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 3,
     energy_required = 2,
     ingredients = {{{"spring", 2}}, {{"brass-plate", 2}}}
   }
 
   tune_up_data.recipes["flywheel"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 50,
     energy_required = 100,
     ingredients = {{{"zinc-plate", 75}}, {{"uranium-238", 1}}}
   }
 
   tune_up_data.recipes["hardened-hull"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = mods["space-age"] and 5 or 1,
     energy_required = mods["space-age"] and 10 or 2,
     ingredients = {{{"invar-plate", 5}, {"tungsten-plate", 1}}, {{"galvanized-panel", 15}, {"tungsten-plate", 1}}, {{"galvanized-panel", 5}}}
   }
 
   tune_up_data.recipes["fast-gearbox"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 5,
     ingredients = {{{"bearing", 2}, {"lubricant", 10}}}
   }
 
   tune_up_data.recipes["express-gearbox"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 5,
     ingredients = {{{"fast-gearbox", 1}, {"electric-motor", 2}, {"lubricant", 10}}, {{"fast-gearbox", 1}, {"electronic-circuit", 2}, {"lubricant", 10}}}
   }
 
   tune_up_data.recipes["gyro"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 2,
     energy_required = 10,
     ingredients = {{{"laser", 1}}, {{"advanced-circuit", 3}}}
   }
 
   tune_up_data.recipes["complex-joint"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 3,
     energy_required = 10,
-    ingredients = {{{"differential-girdlespring", 1}}, {{"motorized-arm", 1}, {"linkages", 2}}}
+    ingredients = {{{"differential-girdlespring", 1}}, {{"motorized-arm", 1}, {"linkages", 2}}, {{"low-density-structure", 1}, {"linkages", 3}}}
   }
 
   tune_up_data.recipes["electroplating-machine"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 3,
     ingredients = {{{"advanced-circuit", 2}, {"tinned-cable", 30}}, {{"advanced-circuit", 5}}}
   }
 
   tune_up_data.recipes["advanced-electroplating-machine"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 3,
     ingredients = {{{"electroplating-machine", 1}, {"holmium-plate", 15}}, {{"electroplating-machine", 1}, {"processing-unit", 1}}}
   }
 
   tune_up_data.recipes["loadbearing-lattice"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 10,
     energy_required = 30,
     ingredients = {{{"low-density-structure", 1}}}
   }
 
   tune_up_data.recipes["malleable-logarithmic-casing"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 1,
     ingredients = {{{"plastic-bar", 1}}}
   }
 
   tune_up_data.recipes["spurving-bearing"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 5,
     ingredients = {{{"tungsten-plate", 2}, {"brass-plate", 3}}}
@@ -322,7 +322,7 @@ if misc.difficulty ~= 3 then
     rm.AddLaserMillData("galvanized-steel-plate", {helium=-1}, {helium=-1})
 end
 
-if mods["quality"] then
+if mods["recycler"] then
     if misc.difficulty == 3 then
         data.raw.recipe["galvanized-steel-plate"].localised_description = {"recipe-description.hint-prodmod-only-salt"}
 
@@ -341,7 +341,7 @@ if mods["quality"] then
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-steel-plate"}},
             icons = {
                       {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -350,17 +350,17 @@ if mods["quality"] then
                         scale = 0.37
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="galvanized-steel-plate", amount=1}
             },
             results = {
-                {type="item", name="steel-plate", amount=1, probability = 0.75},
-                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.1}
+                {type="item", name="steel-plate", amount=1, independent_probability = 0.75},
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, independent_probability = 0.1}
             },
             energy_required = 1/16,
             allow_productivity = false,
@@ -386,7 +386,7 @@ if mods["space-age"] then
             localised_name = {"recipe-name.recycling", {"item-name.brass-plate"}},
             icons = {
                       {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -395,16 +395,16 @@ if mods["space-age"] then
                         scale = 0.37
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="brass-plate", amount=1}
             },
             results = {
-                {type="item", name=mods["scrap-industry"] and "brass-scrap" or "brass-precursor", amount=1, probability = 0.25}
+                {type="item", name=mods["scrap-industry"] and "brass-scrap" or "brass-precursor", amount=1, independent_probability = 0.25}
             },
             energy_required = 0.1,
             allow_productivity = false,
@@ -418,13 +418,13 @@ if mods["space-age"] then
             name = "brass-separation",
             icon = misc.VariableGraphicsPath("__BrassTacksMk2__/graphics", "icons/brass-separation.png"),
             icon_size = 64,
-            category = "centrifuging",
+            categories={"centrifuging"},
             ingredients = {
                 {type="item", name=mods["scrap-industry"] and "brass-scrap" or "brass-precursor", amount=1}
             },
             results = {
-                {type="item", name=mods["scrap-industry"] and "copper-scrap" or "copper-ore", amount=1, probability = 0.03},
-                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.03}
+                {type="item", name=mods["scrap-industry"] and "copper-scrap" or "copper-ore", amount=1, independent_probability = 0.03},
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, independent_probability = 0.03}
             },
             subgroup = "fulgora-processes",
             order = "a[trash]-ab",
@@ -442,13 +442,13 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "space-crushing",
             order = "b-a-d",
-            category = "crushing",
+            categories={"crushing"},
             ingredients = {
-                {type="item", name="brass-asteroid-chunk", amount=1},
+                {type="item", name="brass-asteroid-chunk", amount=1, ignored_by_stats=1},
             },
             results = {
                 {type="item", name="brass-precursor", amount=10},
-                {type="item", name="brass-asteroid-chunk", amount=1, probability=0.2}
+                {type="item", name="brass-asteroid-chunk", amount=1, independent_probability=0.3, ignored_by_stats=1}
             },
             energy_required = 2,
             auto_recycle = false,
@@ -463,18 +463,18 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "space-crushing",
             order = "fa",
-            category = "crushing",
+            categories={"crushing"},
             ingredients = {
-                {type="item", name="brass-asteroid-chunk", amount=1},
+                {type="item", name="brass-asteroid-chunk", amount=1, ignored_by_stats=1},
             },
             results = (mods["IfNickelMk2"] and misc.difficulty == 3) and {
                 {type="item", name="malachite", amount=3},
                 {type="item", name="sphalerite", amount=2},
-                {type="item", name="brass-asteroid-chunk", amount=1, probability=0.05}
+                {type="item", name="brass-asteroid-chunk", amount=1, independent_probability=0.1, ignored_by_stats=1}
             } or {
                 {type="item", name="copper-ore", amount=3},
                 {type="item", name="zinc-ore", amount=2},
-                {type="item", name="brass-asteroid-chunk", amount=1, probability=0.05}
+                {type="item", name="brass-asteroid-chunk", amount=1, independent_probability=0.1, ignored_by_stats=1}
             },
             energy_required = 5,
             auto_recycle = false,
@@ -489,7 +489,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "space-crushing",
             order = "b-b-d",
-            category = "crushing",
+            categories={"crushing"},
             ingredients = {
                 {type="item", name="brass-asteroid-chunk", amount=1},
             },
@@ -508,7 +508,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "a[melting]-aa",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="item", name="sphalerite", amount=50},
                 {type="item", name="calcite", amount=1}
@@ -525,13 +525,13 @@ if mods["space-age"] then
         },
         {
             type = "recipe",
-            name = "molten-zinc",
+            name = "zinc-ore-melting",
             icon = "__pf-sa-compat__/graphics/icons/zinc-ore-melting.png",
             icon_size = 64,
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "a[melting]-d",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="item", name="zinc-ore", amount=50},
                 {type="item", name="calcite", amount=1}
@@ -552,7 +552,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "a[melting]-a[lava-c]",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="lava", amount=500, fluidbox_multiplier=10},
                 {type="item", name="calcite", amount=1}
@@ -573,7 +573,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-ba",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=20, fluidbox_multiplier=10},
             },
@@ -592,7 +592,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-bb",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=6, fluidbox_multiplier=10},
                 {type="fluid", name="molten-copper", amount=6, fluidbox_multiplier=10},
@@ -613,7 +613,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "b[casting]-ca",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=10, fluidbox_multiplier=10},
                 {type="item", name="steel-plate", amount=1},
@@ -635,18 +635,17 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "agriculture-processes",
             order = "e[bacteria]-a[bacteria]-c",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="copper-bacteria", amount=3},
                 {type="item", name="philosophers-hormone", amount=1},
             },
             results = {
-                {type="item", name="zinc-bacteria", amount=3}
+                {type="item", name="zinc-bacteria", amount=3, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 2,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -676,7 +675,7 @@ if mods["space-age"] then
                 },
                 subgroup = "raw-material",
                 order = "n",
-                category = "synthesis",
+                categories={"synthesis"},
                 ingredients = {
                     {type="item", name="carbon", amount=5},
                     {type="fluid", name="ammoniacal-solution", amount=100},
@@ -709,7 +708,7 @@ if mods["space-age"] then
                 },
                 subgroup = "castra-processes",
                 order = "aa",
-                category = "crafting",
+                categories={"crafting"},
                 ingredients = {
                     {type="item", name="ancient-military-wreckage", amount=1}
                 },
@@ -726,7 +725,7 @@ if mods["space-age"] then
                 localised_name = {"recipe-name.recycling", {"item-name.ancient-military-wreckage"}},
                 icons = {
                         {
-                            icon = "__quality__/graphics/icons/recycling.png",
+                            icon = "__recycler__/graphics/icons/recycling.png",
                             icon_size = 64
                         },
                         {
@@ -734,27 +733,27 @@ if mods["space-age"] then
                             icon_size = 64
                         },
                         {
-                            icon = "__quality__/graphics/icons/recycling-top.png",
+                            icon = "__recycler__/graphics/icons/recycling-top.png",
                             icon_size = 64
                         }
                 },
-                category = "recycling-or-hand-crafting",
+                categories={"recycling-or-hand-crafting"},
                 ingredients = {
                     {type="item", name="ancient-military-wreckage", amount=1}
                 },
                 results = {
                     {type="item", name="brass-plate", amount=1, extra_count_fraction = 0.75},
-                    {type="item", name="gunpowder", amount=1, probability = 0.25},
-                    {type="item", name="millerite", amount=1, probability = 0.18},
-                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1, probability = 0.16},
-                    {type="item", name="engine-unit", amount=1, probability = 0.03},
-                    {type="item", name="electric-engine-unit", amount=1, probability = 0.03},
-                    {type="item", name="steel-plate", amount=1, probability = 0.02},
-                    {type="item", name="castra-data", amount=1, probability = 0.01},
-                    {type="item", name="explosive-cannon-shell", amount=1, probability = 0.01},
-                    {type="item", name="land-mine", amount=1, probability = 0.01},
-                    {type="item", name="submachine-gun", amount=1, probability = 0.01},
-                    {type="item", name="rocket-launcher", amount=1, probability = 0.01},
+                    {type="item", name="gunpowder", amount=1, independent_probability = 0.25},
+                    {type="item", name="millerite", amount=1, independent_probability = 0.18},
+                    {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1, independent_probability = 0.16},
+                    {type="item", name="engine-unit", amount=1, independent_probability = 0.03},
+                    {type="item", name="electric-engine-unit", amount=1, independent_probability = 0.03},
+                    {type="item", name="steel-plate", amount=1, independent_probability = 0.02},
+                    {type="item", name="castra-data", amount=1, independent_probability = 0.01},
+                    {type="item", name="explosive-cannon-shell", amount=1, independent_probability = 0.01},
+                    {type="item", name="land-mine", amount=1, independent_probability = 0.01},
+                    {type="item", name="submachine-gun", amount=1, independent_probability = 0.01},
+                    {type="item", name="rocket-launcher", amount=1, independent_probability = 0.01},
                 },
                 bespoke = "ancient-military-wreckage",
                 auto_recycle = false,
@@ -784,16 +783,15 @@ if mods["space-age"] then
                 },
                 subgroup = (misc.difficulty == 3) and "electroplating" or "raw-material",
                 order = (misc.difficulty == 3) and "d3" or "a[smelting]-ca",
-                category = (misc.difficulty == 3) and "electroplating" or "advanced-crafting",
-                additional_categories = {"castra-forge"},
+                categories = (misc.difficulty == 3) and {"electroplating", "castra-forge"} or {"advanced-crafting", "castra-forge"},
                 ingredients = {
                     {type="item", name="steel-plate", amount=1},
                     {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=3},
                     {type="item", name="gunpowder", amount=3},
                 },
                 results = {
-                    {type="item", name="galvanized-steel-plate", amount=1, probability=0.5},
-                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.01}
+                    {type="item", name="galvanized-steel-plate", amount=1, independent_probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, independent_probability=0.01}
                 },
                 auto_recycle = false,
                 energy_required = 1,
@@ -831,7 +829,7 @@ data:extend({
     {
         type = "recipe",
         name = "pipe-flange",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="brass-plate", amount=2}
         },
@@ -847,7 +845,7 @@ data:extend({
     {
         type = "recipe",
         name = "flywheel",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="iron-gear-wheel", amount=1},
             {type="item", name="zinc-plate", amount=3}
@@ -864,7 +862,7 @@ data:extend({
     {
         type = "recipe",
         name = "hardened-hull",
-        category = mods["space-age"] and "pressing" or "crafting",
+        categories = mods["space-age"] and {"crafting", "metallurgy"} or {"crafting"},
         ingredients = {
             {type="item", name="galvanized-steel-plate", amount=1},
             {type="item", name="brass-plate", amount=3},
@@ -882,7 +880,7 @@ data:extend({
     {
         type = "recipe",
         name = "linkages",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="brass-plate", amount=2},
             {type="item", name="iron-stick", amount=3},
@@ -898,7 +896,7 @@ data:extend({
     {
         type = "recipe",
         name = "fast-gearbox",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = gearbox_ingredients,
         results = {
             {type="item", name="fast-gearbox", amount=misc.difficulty==2 and 2 or 1}
@@ -911,7 +909,7 @@ data:extend({
     {
         type = "recipe",
         name = "express-gearbox",
-        category = "crafting-with-fluid",
+        categories={"crafting-with-fluid"},
         ingredients = {
             {type="fluid", name="lubricant", amount=15},
             {type="item", name="fast-gearbox", amount=1},
@@ -930,7 +928,7 @@ data:extend({
     {
         type = "recipe",
         name = "complex-joint",
-        category = "crafting-with-fluid",
+        categories={"crafting-with-fluid"},
         ingredients = {
             {type="fluid", name="lubricant", amount=5},
             {type="item", name="linkages", amount=8},
@@ -948,7 +946,7 @@ data:extend({
     {
         type = "recipe",
         name = "gyro",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="flywheel", amount=1},
             {type="item", name="bearing", amount=2},
@@ -974,7 +972,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-da",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=20},
                 {type="item", name="iron-gear-wheel", amount=1},
@@ -994,7 +992,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-ha",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=5},
                 {type="fluid", name="molten-copper", amount=5},
@@ -1029,7 +1027,7 @@ if mods["space-age"] then
                 },
                 subgroup = "castra-processes",
                 order = "ad",
-                category = "crafting",
+                categories={"crafting"},
                 ingredients = {
                     {type="item", name="iron-gear-wheel", amount=1},
                     {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=5},
@@ -1061,7 +1059,7 @@ if mods["space-age"] then
                 },
                 subgroup = "castra-processes",
                 order = "ad",
-                category = "pressing",
+                categories={"crafting", "metallurgy"},
                 ingredients = {
                     {type="item", name="galvanized-steel-plate", amount=1},
                     {type="item", name="brass-plate", amount=3},
@@ -1119,7 +1117,7 @@ data:extend({
     {
         type = "recipe",
         name = "electroplating-machine",
-        category = mods["space-age"] and "electronics" or "crafting",
+        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
         ingredients = {
             {type="item", name="pipe", amount=10},
             {type="item", name="steel-plate", amount=5},
@@ -1136,7 +1134,7 @@ data:extend({
     {
         type = "recipe",
         name = "advanced-electroplating-machine",
-        category = mods["space-age"] and "electromagnetics" or "crafting",
+        categories = mods["space-age"] and {"electromagnetics"} or {"crafting"},
         ingredients = mods["space-age"] and {
             {type="item", name="electroplating-machine", amount=1},
             {type="fluid", name="electrolyte", amount=50},
@@ -1166,7 +1164,7 @@ data:extend({
     {
         type = "recipe",
         name = "depleted-zinc-salt-reprocessing",
-        category = "electroplating",
+        categories={"electroplating"},
         icon = "__BrassTacksMk2__/graphics/vector/icons/depleted-zinc-salts.png",
         icon_size = 64,
         subgroup = "electroplating",
@@ -1188,7 +1186,7 @@ data:extend({
     {
         type = "recipe",
         name = "galvanized-panel",
-        category = "electroplating",
+        categories={"electroplating"},
         ingredients = {
             {type="item", name="iron-plate", amount=5},
             {type="item", name="zinc-plate", amount=1},
@@ -1196,7 +1194,7 @@ data:extend({
         },
         results = {
             {type="fluid", name="depleted-zinc-salts", amount=10},
-            {type="item", name="galvanized-panel", amount=5, ignored_by_productivity=mods["quality"] and 5 or 0},
+            {type="item", name="galvanized-panel", amount=5, ignored_by_productivity=mods["recycler"] and 5 or 0},
         },
         main_product = "galvanized-panel",
         energy_required = 2,
@@ -1207,7 +1205,7 @@ data:extend({
     {
         type = "recipe",
         name = "galvanized-rod",
-        category = "electroplating",
+        categories={"electroplating"},
         ingredients = {
             {type="item", name="iron-stick", amount=5},
             {type="item", name="zinc-plate", amount=1},
@@ -1215,7 +1213,7 @@ data:extend({
         },
         results = {
             {type="fluid", name="depleted-zinc-salts", amount=10},
-            {type="item", name="galvanized-rod", amount=5, ignored_by_productivity=mods["quality"] and 5 or 0}
+            {type="item", name="galvanized-rod", amount=5, ignored_by_productivity=mods["recycler"] and 5 or 0}
         },
         main_product = "galvanized-rod",
         energy_required = 2,
@@ -1226,7 +1224,7 @@ data:extend({
     {
         type = "recipe",
         name = "galvanized-tubing",
-        category = "electroplating",
+        categories={"electroplating"},
         ingredients = {
             {type="item", name="pipe", amount=5},
             {type="item", name="zinc-plate", amount=1},
@@ -1234,7 +1232,7 @@ data:extend({
         },
         results = {
             {type="fluid", name="depleted-zinc-salts", amount=10},
-            {type="item", name="galvanized-tubing", amount=5, ignored_by_productivity=mods["quality"] and 5 or 0}
+            {type="item", name="galvanized-tubing", amount=5, ignored_by_productivity=mods["recycler"] and 5 or 0}
         },
         main_product = "galvanized-tubing",
         energy_required = 4,
@@ -1245,7 +1243,7 @@ data:extend({
     {
         type = "recipe",
         name = "malleable-logarithmic-casing",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="galvanized-panel", amount=2},
             {type="item", name="galvanized-rod", amount=2},
@@ -1262,7 +1260,7 @@ data:extend({
     {
         type = "recipe",
         name = "loadbearing-lattice",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="galvanized-steel-plate", amount=1},
             {type="item", name="galvanized-panel", amount=1},
@@ -1295,7 +1293,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "spurving-bearing",
-            category = "pressing",
+            categories={"metallurgy"},
             surface_conditions =
             {
               {
@@ -1324,7 +1322,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "electroplating",
             order = "a2",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=10, fluidbox_multiplier=10},
                 {type="item", name="iron-plate", amount=5},
@@ -1346,7 +1344,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "electroplating",
             order = "b2",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=10, fluidbox_multiplier=10},
                 {type="item", name="iron-stick", amount=5},
@@ -1368,7 +1366,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "electroplating",
             order = "c2",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-zinc", amount=10, fluidbox_multiplier=10},
                 {type="item", name="pipe", amount=5},
@@ -1404,16 +1402,15 @@ if mods["space-age"] then
                 },
                 subgroup = "electroplating",
                 order = "a3",
-                category = "electroplating",
-                additional_categories = {"castra-forge"},
+                categories={"electroplating", "castra-forge"},
                 ingredients = {
                     {type="item", name="iron-plate", amount=1},
                     {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1},
                     {type="item", name="gunpowder", amount=1},
                 },
                 results = {
-                    {type="item", name="galvanized-panel", amount=1, probability=0.5},
-                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
+                    {type="item", name="galvanized-panel", amount=1, independent_probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, independent_probability=0.005}
                 },
                 auto_recycle = false,
                 energy_required = 0.5,
@@ -1437,16 +1434,15 @@ if mods["space-age"] then
                 },
                 subgroup = "electroplating",
                 order = "b3",
-                category = "electroplating",
-                additional_categories = {"castra-forge"},
+                categories={"electroplating", "castra-forge"},
                 ingredients = {
                     {type="item", name="iron-stick", amount=1},
                     {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1},
                     {type="item", name="gunpowder", amount=1},
                 },
                 results = {
-                    {type="item", name="galvanized-rod", amount=1, probability=0.5},
-                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
+                    {type="item", name="galvanized-rod", amount=1, independent_probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, independent_probability=0.005}
                 },
                 auto_recycle = false,
                 energy_required = 0.5,
@@ -1470,16 +1466,15 @@ if mods["space-age"] then
                 },
                 subgroup = "electroplating",
                 order = "c3",
-                category = "electroplating",
-                additional_categories = {"castra-forge"},
+                categories={"electroplating", "castra-forge"},
                 ingredients = {
                     {type="item", name="pipe", amount=1},
                     {type="item", name=mods["IfNickelMk2"] and "cst-nickel-plate" or "nickel-plate", amount=1},
                     {type="item", name="gunpowder", amount=1},
                 },
                 results = {
-                    {type="item", name="galvanized-tubing", amount=1, probability=0.5},
-                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
+                    {type="item", name="galvanized-tubing", amount=1, independent_probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, independent_probability=0.005}
                 },
                 auto_recycle = false,
                 energy_required = 0.5,
@@ -1490,13 +1485,13 @@ if mods["space-age"] then
 end
 
 if mods["bztin"] and data.raw.item["tinned-cable"] then
-    data.raw.recipe["tinned-cable"].category = "electroplating"
+    data.raw.recipe["tinned-cable"].categories={"electroplating"}
     data.raw.recipe["tinned-cable"].allow_productivity = true
     data.raw.recipe["tinned-cable"].auto_recycle = false
     data.raw.item["tinned-cable"].auto_recycle = false
 end
 
-if mods["quality"] then
+if mods["recycler"] then
     data.raw.recipe["galvanized-panel"].localised_description = {"recipe-description.hint-prodmod-only-salt"}
     data.raw.recipe["galvanized-rod"].localised_description = {"recipe-description.hint-prodmod-only-salt"}
     data.raw.recipe["galvanized-tubing"].localised_description = {"recipe-description.hint-prodmod-only-salt"}
@@ -1516,7 +1511,7 @@ if mods["quality"] then
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-panel"}},
             icons = {
                     {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -1525,17 +1520,17 @@ if mods["quality"] then
                         scale = 0.37
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="galvanized-panel", amount=1}
             },
             results = {
-                {type="item", name="iron-plate", amount=1, probability = 0.75},
-                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.02}
+                {type="item", name="iron-plate", amount=1, independent_probability = 0.75},
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, independent_probability = 0.02}
             },
             bespoke = "galvanized-panel",
             energy_required = 1/16,
@@ -1551,7 +1546,7 @@ if mods["quality"] then
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-rod"}},
             icons = {
                     {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -1560,17 +1555,17 @@ if mods["quality"] then
                         scale = 0.37
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="galvanized-rod", amount=1}
             },
             results = {
-                {type="item", name="iron-stick", amount=1, probability = 0.75},
-                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.02}
+                {type="item", name="iron-stick", amount=1, independent_probability = 0.75},
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, independent_probability = 0.02}
             },
             bespoke = "galvanized-rod",
             energy_required = 1/16,
@@ -1586,7 +1581,7 @@ if mods["quality"] then
             localised_name = {"recipe-name.recycling", {"item-name.galvanized-tubing"}},
             icons = {
                     {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -1595,17 +1590,17 @@ if mods["quality"] then
                         scale = 0.37
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="galvanized-tubing", amount=1}
             },
             results = {
-                {type="item", name="pipe", amount=1, probability = 0.75},
-                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, probability = 0.02}
+                {type="item", name="pipe", amount=1, independent_probability = 0.75},
+                {type="item", name=mods["scrap-industry"] and "zinc-scrap" or "zinc-ore", amount=1, independent_probability = 0.02}
             },
             bespoke = "galvanized-tubing",
             energy_required = 1/16,
@@ -1631,7 +1626,7 @@ if mods["quality"] then
                 localised_name = {"recipe-name.recycling", {"item-name.tinned-cable"}},
                 icons = {
                         {
-                            icon = "__quality__/graphics/icons/recycling.png",
+                            icon = "__recycler__/graphics/icons/recycling.png",
                             icon_size = 64
                           },
                           {
@@ -1641,17 +1636,17 @@ if mods["quality"] then
                             scale = 0.37
                           },
                           {
-                            icon = "__quality__/graphics/icons/recycling-top.png",
+                            icon = "__recycler__/graphics/icons/recycling-top.png",
                             icon_size = 64
                           }
                 },
-                category = "recycling",
+                categories={"recycling"},
                 ingredients = {
                     {type="item", name="tinned-cable", amount=1}
                 },
                 results = {
-                    {type="item", name="copper-cable", amount=1, probability=0.7},
-                    {type="item", name="tin-ore", amount=1, probability = 0.005}
+                    {type="item", name="copper-cable", amount=1, independent_probability=0.7},
+                    {type="item", name="tin-ore", amount=1, independent_probability = 0.005}
                 },
                 bespoke = "tinned-cable",
                 energy_required = 1/32,
@@ -1673,7 +1668,7 @@ if mods["LunarLandings"] or mods["planet-muluna"] then
             type = "recipe",
             name = "skyseeker-armature",
             energy_required = 10,
-            category = "crafting",
+            categories={"crafting"},
             ingredients = {
                 {type="item", name="electric-engine-unit", amount=2},
                 {type="item", name="low-density-structure", amount=1},

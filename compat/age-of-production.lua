@@ -13,9 +13,9 @@ end
 
 tm.AddUnlock("aop-mineral-synthesis", "ammoniacal-zinc-synthesis")
 
-rm.AddProduct("aop-nauvitian-crushing", {type="item", name="zinc-ore", amount=1, probability=0.4})
-rm.AddProduct("aop-vulcanusian-crushing", {type="item", name="sphalerite", amount=2, probability=0.5})
-rm.AddProduct("aop-fulgoran-crushing", {type="item", name="zinc-ore", amount=1, probability=0.2})
-rm.AddProduct("aop-gleban-crushing", {type="item", name="zinc-bacteria", amount=1, probability=0.5})
+rm.AddProduct("aop-nauvitian-crushing", {type="item", name="zinc-ore", amount=1, independent_probability=0.4})
+rm.AddProduct("aop-vulcanusian-crushing", {type="item", name="sphalerite", amount=2, independent_probability=0.5})
+rm.AddProduct("aop-fulgoran-crushing", {type="item", name="zinc-ore", amount=1, independent_probability=0.2})
+rm.AddProduct("aop-gleban-crushing", {type="item", name="zinc-bacteria", amount=1, independent_probability=0.5})
 
 rm.AddRecipeCategory("zinc-bacteria", "biochemistry")

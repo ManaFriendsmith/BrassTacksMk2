@@ -197,10 +197,11 @@ if mods["space-age"] then
             order = "b[new-fluid]-b[vulcanus]-c",
             default_temperature = 420,
             max_temperature = 2000,
-            base_color = {1, 1, 1, 1},
-            flow_color = {0.8, 0.8, 0.8, 1},
+            base_color = {0.6, 0.6, 0.6, 1},
+            flow_color = {1, 1, 1, 1},
             visualization_color = {1, 1, 1, 1},
-            auto_barrel = false
+            auto_barrel = false,
+            draw_as_glow = true
         },
         {
             type = "item",

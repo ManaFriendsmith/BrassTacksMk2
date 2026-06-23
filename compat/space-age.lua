@@ -24,12 +24,19 @@ tm.AddUnlock("asteroid-productivity", {type="change-recipe-productivity", recipe
 if misc.difficulty > 1 then
     rm.ReplaceIngredientProportional("thruster", "steel-plate", "hardened-hull")
     rm.ReplaceIngredientProportional("cargo-bay", "steel-plate", "hardened-hull")
-    rm.ReplaceIngredientProportional("cargo-landing-pad", "steel-plate", "hardened-hull")
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("landing-pad-unloading-bay", "steel-chest", "spurving-bearing", 2.5)
+        tm.AddPrerequisite("landing-pad-unloading-bay", "metallurgic-science-pack")
+        tm.AddSciencePack("landing-pad-unloading-bay", "metallurgic-science-pack")
+    else
+            rm.ReplaceIngredientProportional("landing-pad-unloading-bay", "steel-chest", "bearing", 25)
+    end
     rm.ReplaceIngredientProportional("cargo-landing-pad", "steel-plate", "hardened-hull")
     rm.ReplaceIngredientProportional("space-platform-foundation", "steel-plate", "hardened-hull", 0.5, 10)
     rm.AddIngredient("asteroid-collector", "complex-joint", 20)
 else
     rm.AddIngredient("asteroid-collector", "bearing", 20)
+    rm.ReplaceIngredientProportional("landing-pad-unloading-bay", "steel-chest", "bearing", 5)
 end
 rm.AddIngredient("crusher", "bearing", 10)
 
@@ -37,7 +44,7 @@ rm.AddIngredient("crusher", "bearing", 10)
 --Turbo belt gearboxes are with other belt changes in vanilla.lua
 --unprincipled!!!
 
-rm.AddProduct("acid-neutralisation", {type="item", name="sphalerite", amount=6})
+rm.AddProduct("acid-neutralisation", {type="item", name="sphalerite", amount=1})
 
 rm.MultiplyRecipe("casting-pipe", 5)
 if misc.difficulty == 1 then
@@ -49,7 +56,7 @@ else
 end
 
 tm.AddUnlock("foundry", "molten-zinc-from-sphalerite", "-concrete-from-molten-iron")
-tm.AddUnlock("foundry", "molten-zinc", "-casting-iron")
+tm.AddUnlock("foundry", "zinc-ore-melting", "-casting-iron")
 tm.AddUnlock("foundry", "casting-zinc", "-casting-iron-gear-wheel")
 tm.AddUnlock("foundry", "casting-brass", "-casting-iron-gear-wheel")
 if misc.difficulty == 3 then
@@ -146,11 +153,11 @@ end
 
 tm.AddUnlock("recycling", "brass-separation")
 
-rm.RemoveProduct("scrap-recycling", {type="item", name="steel-plate", probability=0.04, amount=1})
+rm.RemoveProduct("scrap-recycling", {type="item", name="steel-plate", independent_probability=-1, amount=1})
 if misc.difficulty < 3 then
-    rm.AddProduct("scrap-recycling", {type="item", name="galvanized-steel-plate", probability=0.05, amount=1})
+    rm.AddProduct("scrap-recycling", {type="item", name="galvanized-steel-plate", independent_probability=0.05, amount=1})
 else
-    rm.AddProduct("scrap-recycling", {type="item", name="loadbearing-lattice", probability=0.16, amount=1})
+    rm.AddProduct("scrap-recycling", {type="item", name="loadbearing-lattice", independent_probability=0.16, amount=1})
 end
 
 local function replace_drop(entity, find, replace, category)
@@ -174,6 +181,9 @@ replace_drop("fulgoran-ruin-huge", "steel-plate", misc.difficulty == 3 and "load
 replace_drop("fulgoran-ruin-vault", "steel-plate", misc.difficulty == 3 and "loadbearing-lattice" or "galvanized-steel-plate")
 replace_drop("fulgoran-ruin-attractor", "steel-plate", misc.difficulty == 3 and "loadbearing-lattice" or "galvanized-steel-plate", "lightning-attractor")
 
+replace_drop("fulgora-sunk-ruin-big", "steel-plate", misc.difficulty == 3 and "loadbearing-lattice" or "galvanized-steel-plate")
+replace_drop("fulgora-sunk-ruin-medium-tall", "steel-plate", misc.difficulty == 3 and "loadbearing-lattice" or "galvanized-steel-plate")
+
 rm.ReplaceIngredientProportional("lightning-rod", "steel-plate", misc.difficulty == 3 and "loadbearing-lattice" or "galvanized-steel-plate")
 
 if misc.difficulty > 1 then
@@ -181,8 +191,8 @@ if misc.difficulty > 1 then
         rm.AddIngredient("tesla-turret", "gyro", 10)
     end
     if mods["LasingAroundMk2"] then
-        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="fast-gearbox", amount=1, probability=0.2})
-        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="linkages", amount=1, probability=0.2})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="fast-gearbox", amount=1, independent_probability=0.2})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="linkages", amount=1, independent_probability=0.2})
     end
 end
 
@@ -195,16 +205,16 @@ end
 
 if misc.difficulty == 3 then
     --fuck ya throughput. bing bong
-    rm.AddProduct("scrap-recycling", {type="item", name="brass-balls", amount=1, probability=0.15})
+    rm.AddProduct("scrap-recycling", {type="item", name="brass-balls", amount=1, independent_probability=0.15})
 
     rm.AddProduct("ice-melting", "water", 5)
     rm.AddProduct("advanced-water-melting-atmosphere", "water", 5)
     rm.AddProduct("advanced-water-melting-oxygen", "water", 5)
 else
     if mods["LasingAroundMk2"] and misc.difficulty > 1 then
-        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, probability=0.1})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="bearing", amount=1, independent_probability=0.1})
     else
-        rm.AddProduct("scrap-recycling", {type="item", name="bearing", amount=1, probability=0.02})
+        rm.AddProduct("scrap-recycling", {type="item", name="bearing", amount=1, independent_probability=0.02})
     end
 end
 

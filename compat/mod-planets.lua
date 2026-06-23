@@ -26,7 +26,7 @@ if mods["LunarLandings"] then
         rm.ReplaceIngredientProportional("ll-low-grav-assembling-machine", "iron-gear-wheel", "complex-joint")
         rm.ReplaceIngredientProportional("ll-telescope", "iron-gear-wheel", "skyseeker-armature")
         rm.AddIngredient("ll-data-card", {type="item", name="skyseeker-armature", amount=1, ignored_by_stats=1})
-        rm.AddProduct("ll-data-card", {type="item", name="skyseeker-armature", amount=1, ignored_by_stats=1, ignored_by_productivity=1, probability=0.95})
+        rm.AddProduct("ll-data-card", {type="item", name="skyseeker-armature", amount=1, ignored_by_stats=1, ignored_by_productivity=1, independent_probability=0.95})
 
         rm.AddIngredient("ll-core-extractor", "bearing", 20)
         rm.ReplaceIngredientProportional("ll-rocket-silo-interstellar", "pipe", "galvanized-tubing")
@@ -196,7 +196,7 @@ if mods["castra"] then
     end
     tm.AddUnlock("gunpowder-processing", "blast-galvanized-steel-plate")
 
-    rm.AddProduct("jammed-data-collector-process", {type="item", name="ancient-military-wreckage", amount=1, probability=0.15})
+    rm.AddProduct("jammed-data-collector-process", {type="item", name="ancient-military-wreckage", amount=1, independent_probability=0.15})
 
     if misc.difficulty > 1 then
         tm.AddUnlock("millerite-processing", "flywheel-nickel")
@@ -207,7 +207,7 @@ if mods["castra"] then
 
         rm.AddIngredient("engine-unit-gunpowder", "linkages", 1)
         rm.AddIngredient("distractor-capsule-castra-data", "gyro", 4)
-        rm.AddProduct("ancient-military-wreckage-recycling", {type="item", name="hardened-hull", amount=1, probability=0.05})
+        rm.AddProduct("ancient-military-wreckage-recycling", {type="item", name="hardened-hull", amount=1, independent_probability=0.05})
 
         rm.AddIngredient("military-transport-belt", "hardened-hull", 2)
         rm.AddIngredient("military-underground-belt", "hardened-hull", 5)
@@ -233,7 +233,7 @@ if mods["planet-muluna"] then
 
     rm.ReplaceIngredientProportional("space-science-pack-muluna", "iron-plate", "iron-gear-wheel")
 
-    rm.AddProduct("muluna-regolith-sorting", {type="item", name="zinc-ore", amount=1, probability=0.05})
+    rm.AddProduct("muluna-regolith-sorting", {type="item", name="zinc-ore", amount=1, independent_probability=0.05})
 
     if misc.difficulty == 3 then
         --massive increase in tungsten cost. you set it to "maximal"!
@@ -248,9 +248,9 @@ if mods["Cerys-Moon-of-Fulgora"] then
     tm.AddUnlock("cerys-nuclear-scrap-recycling", "brass-separation")
     -- don't make prob too high or it's too easy to get iron from gears
     if misc.difficulty > 1 then
-        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="flywheel", amount=1, probability=0.04})
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="flywheel", amount=1, independent_probability=0.04})
     else
-        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="zinc-plate", amount=1, probability=0.04})
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="zinc-plate", amount=1, independent_probability=0.04})
     end
 
     rm.ReplaceIngredientProportional("cerys-space-science-pack-from-methane-ice", "iron-plate", "iron-gear-wheel")
@@ -258,7 +258,7 @@ if mods["Cerys-Moon-of-Fulgora"] then
 end
 
 if mods["Moshine"] then
-    table.insert(data.raw["resource"]["multi-ore"].minable.results, {type="item", name=misc.difficulty==3 and "sphalerite" or "zinc-ore", amount=1, probability=0.05})
+    table.insert(data.raw["resource"]["multi-ore"].minable.results, {type="item", name=misc.difficulty==3 and "sphalerite" or "zinc-ore", amount=1, independent_probability=0.05})
 
     if misc.difficulty == 3 then
         rm.AddIngredient("datacell-empty", "malleable-logarithmic-casing")

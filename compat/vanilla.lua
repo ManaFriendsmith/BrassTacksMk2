@@ -409,12 +409,14 @@ else
     rm.ReplaceIngredientProportional("assembling-machine-1", "iron-gear-wheel", "linkages")
 
     tm.AddPrerequisite("automation-2", "mechanical-engineering")
-    rm.ReplaceIngredientProportional("assembling-machine-2", "iron-gear-wheel", "fast-gearbox", 0.2)
-    rm.AddIngredient("assembling-machine-3", "express-gearbox", 2)
+    rm.ReplaceIngredientProportional("assembling-machine-2", "iron-gear-wheel", "fast-gearbox", misc.difficulty == 3 and 0.4 or 0.2)
+    rm.AddIngredient("assembling-machine-3", "express-gearbox", misc.difficulty == 3 and 4 or 2)
     if data.raw.item["nitinol-plate"] then
         tm.AddPrerequisite("automation-3", "nitinol-processing")
+        rm.AddIngredient("assembling-machine-3", "complex-joint", 5)
+    else
+        rm.AddIngredient("assembling-machine-3", "complex-joint", misc.difficulty == 3 and 10 or 5)
     end
-    rm.AddIngredient("assembling-machine-3", "complex-joint", 5)
 end
 
 if misc.difficulty == 3 then
@@ -458,7 +460,7 @@ end
 
 --GENERATORS
 
-rm.AddIngredient("steam-turbine", "bearing", 5)
+rm.AddIngredient("steam-turbine", "bearing", misc.difficulty == 3 and 10 or 5)
 
 if misc.difficulty == 3 then
     rm.ReplaceIngredientProportional("accumulator", "iron-plate", "galvanized-panel", 2)

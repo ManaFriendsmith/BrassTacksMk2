@@ -27,6 +27,7 @@ data:extend({
         },
         energy_required = 3.2,
         allow_productivity = true,
+        auto_recycle = false,
         enabled = true
     },
     {

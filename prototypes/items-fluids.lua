@@ -501,7 +501,7 @@ if mods["space-age"] then
       pick_sound = item_sounds.mechanical_inventory_pickup,
       drop_sound = item_sounds.mechanical_inventory_move,
       stack_size = 50,
-      default_import_location = "nauvis",
+      default_import_location = "vulcanus",
       weight = 2.5*kg
     }
   })
